@@ -1,1 +1,9 @@
 G:\Code\C_Sharp\YoungHero\YoungHero\bin\Debug\YoungHero.exe.config
+G:\Code\C_Sharp\YoungHero\YoungHero\bin\Debug\YoungHero.exe
+G:\Code\C_Sharp\YoungHero\YoungHero\bin\Debug\YoungHero.pdb
+G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.csprojResolveAssemblyReference.cache
+G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.Form1.resources
+G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.Properties.Resources.resources
+G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.csproj.GenerateResource.Cache
+G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.exe
+G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.pdb
