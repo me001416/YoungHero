@@ -6,3 +6,4 @@ G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.Properties.Resources.res
 G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.csproj.GenerateResource.Cache
 G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.exe
 G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.pdb
+G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.MainForm.resources
