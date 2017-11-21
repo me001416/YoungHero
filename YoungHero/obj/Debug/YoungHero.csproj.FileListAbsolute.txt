@@ -7,3 +7,4 @@ G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.csproj.GenerateResource.
 G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.exe
 G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.pdb
 G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.MainForm.resources
+G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.LoadSaveFile.resources

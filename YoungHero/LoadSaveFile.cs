@@ -21,7 +21,9 @@ namespace YoungHero
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog ofg = new OpenFileDialog();
+            ofg.Filter = "Save File|*.Save";
+            ofg.InitialDirectory = Properties.Settings.Default.pathName;
         }
 
         private void button2_Click(object sender, EventArgs e)
