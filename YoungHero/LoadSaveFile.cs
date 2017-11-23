@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
+using System.Threading;
 
 namespace YoungHero
 {
     public partial class LoadSaveFile : Form
     {
+        dynamic saveJson;
         String saveFileName;
 
         public LoadSaveFile()
@@ -41,8 +43,23 @@ namespace YoungHero
             Properties.Settings.Default.Save();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void SaveLoad()
         {
+            StreamReader saveSR = new StreamReader(this.saveFileName, Encoding.ASCII);
+            string saveStr = saveSR.ReadToEnd();
+            saveJson = JsonConvert.DeserializeObject(saveStr);
+            saveSR.Close();
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(this.saveFileName))
+            {
+                return;
+            }
+
+            await Task.Run(() => this.SaveLoad());
+
 
         }
 
