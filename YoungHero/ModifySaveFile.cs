@@ -31,7 +31,10 @@ namespace YoungHero
 
         private void Initial()
         {
-            this.MoneyTextBox = saveJson.m_iMoney;
+            Int64 money;
+
+            money = saveJson.m_iMoney
+            this.MoneyTextBox = money.ToString();
             this.AttributePointsTextBox = saveJson.m_iAttributePoints;
         }
     }
