@@ -33,6 +33,7 @@
             this.MoneyTextBox = new System.Windows.Forms.TextBox();
             this.AttributePointsTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -78,11 +79,22 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "閱歷";
             // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(719, 24);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 5;
+            this.backButton.Text = "返回";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // ModifySaveFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 495);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.AttributePointsTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MoneyTextBox);
@@ -102,5 +114,6 @@
         private System.Windows.Forms.TextBox MoneyTextBox;
         private System.Windows.Forms.TextBox AttributePointsTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button backButton;
     }
 }

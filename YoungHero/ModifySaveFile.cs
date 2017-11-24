@@ -34,5 +34,17 @@ namespace YoungHero
             this.MoneyTextBox.Text = saveJson.m_iMoney;
             this.AttributePointsTextBox.Text = saveJson.m_iAttributePoints;
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("確定要離開嗎?", "離開", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
