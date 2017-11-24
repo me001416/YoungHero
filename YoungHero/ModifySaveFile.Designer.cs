@@ -31,6 +31,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label = new System.Windows.Forms.Label();
             this.MoneyTextBox = new System.Windows.Forms.TextBox();
+            this.AttributePointsTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
@@ -59,11 +61,30 @@
             this.MoneyTextBox.Size = new System.Drawing.Size(100, 22);
             this.MoneyTextBox.TabIndex = 2;
             // 
+            // AttributePointsTextBox
+            // 
+            this.AttributePointsTextBox.Location = new System.Drawing.Point(84, 52);
+            this.AttributePointsTextBox.Name = "AttributePointsTextBox";
+            this.AttributePointsTextBox.Size = new System.Drawing.Size(100, 22);
+            this.AttributePointsTextBox.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(26, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "閱歷";
+            // 
             // ModifySaveFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 495);
+            this.Controls.Add(this.AttributePointsTextBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.MoneyTextBox);
             this.Controls.Add(this.label);
             this.Controls.Add(this.listBox1);
@@ -79,5 +100,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox MoneyTextBox;
+        private System.Windows.Forms.TextBox AttributePointsTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }

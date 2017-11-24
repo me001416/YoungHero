@@ -60,7 +60,10 @@ namespace YoungHero
 
             await Task.Run(() => this.SaveLoad());
 
-
+            ModifySaveFile msf = new ModifySaveFile(ref saveJson);
+            msf.Top = this.Top;
+            msf.Left = this.Left;
+            msf.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)

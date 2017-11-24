@@ -10,3 +10,4 @@ G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.MainForm.resources
 G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.LoadSaveFile.resources
 G:\Code\C_Sharp\YoungHero\YoungHero\bin\Debug\Newtonsoft.Json.dll
 G:\Code\C_Sharp\YoungHero\YoungHero\bin\Debug\Newtonsoft.Json.xml
+G:\Code\C_Sharp\YoungHero\YoungHero\obj\Debug\YoungHero.ModifySaveFile.resources
