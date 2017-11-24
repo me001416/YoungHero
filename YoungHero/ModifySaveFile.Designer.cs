@@ -28,19 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label = new System.Windows.Forms.Label();
+            this.MoneyTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(618, 347);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(176, 136);
+            this.listBox1.TabIndex = 0;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label.Location = new System.Drawing.Point(26, 24);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(40, 16);
+            this.label.TabIndex = 1;
+            this.label.Text = "金錢";
+            // 
+            // MoneyTextBox
+            // 
+            this.MoneyTextBox.Location = new System.Drawing.Point(84, 24);
+            this.MoneyTextBox.Name = "MoneyTextBox";
+            this.MoneyTextBox.Size = new System.Drawing.Size(100, 22);
+            this.MoneyTextBox.TabIndex = 2;
             // 
             // ModifySaveFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 349);
+            this.ClientSize = new System.Drawing.Size(806, 495);
+            this.Controls.Add(this.MoneyTextBox);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.listBox1);
             this.Name = "ModifySaveFile";
             this.Text = "ModifySaveFile";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TextBox MoneyTextBox;
     }
 }
