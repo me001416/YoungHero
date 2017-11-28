@@ -79,9 +79,8 @@ namespace YoungHero
                 case "NpcTabPage":
                     NpcListBox.Visible = true;
                     break;
-                case "ItemTabPage":
-
                 default:
+                    NpcListBox.Visible = false;
                     break;
             }
         }
