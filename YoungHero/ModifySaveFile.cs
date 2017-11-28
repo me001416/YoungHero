@@ -26,6 +26,14 @@ namespace YoungHero
         {
             this.MoneyTextBox.Text = saveJson.m_iMoney;
             this.AttributePointsTextBox.Text = saveJson.m_iAttributePoints;
+
+            foreach (dynamic npc in saveJson.m_NpcList)
+            {
+                if(npc.NpcType == 1)
+                {
+                    NpcListBox.Items.Add("");
+                }
+            }
         }
 
         private void backButton_Click(object sender, EventArgs e)
