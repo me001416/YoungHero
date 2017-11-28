@@ -28,23 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label = new System.Windows.Forms.Label();
             this.MoneyTextBox = new System.Windows.Forms.TextBox();
             this.AttributePointsTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
             this.confrimButton = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.NpcTabPage = new System.Windows.Forms.TabPage();
+            this.ItemTabPage = new System.Windows.Forms.TabPage();
+            this.NpcListBox = new System.Windows.Forms.ListBox();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(618, 347);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(176, 136);
-            this.listBox1.TabIndex = 0;
             // 
             // label
             // 
@@ -96,37 +91,81 @@
             this.confrimButton.Name = "confrimButton";
             this.confrimButton.Size = new System.Drawing.Size(75, 23);
             this.confrimButton.TabIndex = 6;
-            this.confrimButton.Text = "返回";
+            this.confrimButton.Text = "確認";
             this.confrimButton.UseVisualStyleBackColor = true;
             this.confrimButton.Click += new System.EventHandler(this.confrimButton_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.NpcTabPage);
+            this.tabControl1.Controls.Add(this.ItemTabPage);
+            this.tabControl1.Location = new System.Drawing.Point(29, 93);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(652, 363);
+            this.tabControl1.TabIndex = 7;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
+            // 
+            // NpcTabPage
+            // 
+            this.NpcTabPage.Location = new System.Drawing.Point(4, 22);
+            this.NpcTabPage.Name = "NpcTabPage";
+            this.NpcTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.NpcTabPage.Size = new System.Drawing.Size(644, 337);
+            this.NpcTabPage.TabIndex = 0;
+            this.NpcTabPage.Text = "NPC";
+            this.NpcTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ItemTabPage
+            // 
+            this.ItemTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ItemTabPage.Name = "ItemTabPage";
+            this.ItemTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ItemTabPage.Size = new System.Drawing.Size(644, 337);
+            this.ItemTabPage.TabIndex = 1;
+            this.ItemTabPage.Text = "ITEM";
+            this.ItemTabPage.UseVisualStyleBackColor = true;
+            // 
+            // NpcListBox
+            // 
+            this.NpcListBox.FormattingEnabled = true;
+            this.NpcListBox.ItemHeight = 12;
+            this.NpcListBox.Location = new System.Drawing.Point(719, 115);
+            this.NpcListBox.Name = "NpcListBox";
+            this.NpcListBox.Size = new System.Drawing.Size(120, 88);
+            this.NpcListBox.TabIndex = 8;
             // 
             // ModifySaveFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 495);
+            this.ClientSize = new System.Drawing.Size(856, 495);
+            this.Controls.Add(this.NpcListBox);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.confrimButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.AttributePointsTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MoneyTextBox);
             this.Controls.Add(this.label);
-            this.Controls.Add(this.listBox1);
             this.Name = "ModifySaveFile";
             this.Text = "ModifySaveFile";
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox MoneyTextBox;
         private System.Windows.Forms.TextBox AttributePointsTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button confrimButton;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage NpcTabPage;
+        private System.Windows.Forms.TabPage ItemTabPage;
+        private System.Windows.Forms.ListBox NpcListBox;
     }
 }

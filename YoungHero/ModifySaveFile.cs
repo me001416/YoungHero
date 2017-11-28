@@ -71,5 +71,19 @@ namespace YoungHero
             MessageBox.Show("存檔完成", "存檔");
             this.Close();
         }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            switch (tabControl1.TabPages[e.TabPageIndex].Name)
+            {
+                case "NpcTabPage":
+                    NpcListBox.Visible = true;
+                    break;
+                case "ItemTabPage":
+
+                default:
+                    break;
+            }
+        }
     }
 }
