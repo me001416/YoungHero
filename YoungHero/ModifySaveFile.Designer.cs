@@ -39,6 +39,7 @@
             this.ItemTabPage = new System.Windows.Forms.TabPage();
             this.NpcListBox = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
+            this.NpcTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // label
@@ -108,6 +109,7 @@
             // 
             // NpcTabPage
             // 
+            this.NpcTabPage.Controls.Add(this.NpcListBox);
             this.NpcTabPage.Location = new System.Drawing.Point(4, 22);
             this.NpcTabPage.Name = "NpcTabPage";
             this.NpcTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -130,9 +132,9 @@
             // 
             this.NpcListBox.FormattingEnabled = true;
             this.NpcListBox.ItemHeight = 12;
-            this.NpcListBox.Location = new System.Drawing.Point(719, 115);
+            this.NpcListBox.Location = new System.Drawing.Point(518, 6);
             this.NpcListBox.Name = "NpcListBox";
-            this.NpcListBox.Size = new System.Drawing.Size(120, 88);
+            this.NpcListBox.Size = new System.Drawing.Size(120, 316);
             this.NpcListBox.TabIndex = 8;
             // 
             // ModifySaveFile
@@ -140,7 +142,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 495);
-            this.Controls.Add(this.NpcListBox);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.confrimButton);
             this.Controls.Add(this.backButton);
@@ -151,6 +152,7 @@
             this.Name = "ModifySaveFile";
             this.Text = "ModifySaveFile";
             this.tabControl1.ResumeLayout(false);
+            this.NpcTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
