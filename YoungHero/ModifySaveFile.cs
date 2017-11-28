@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace YoungHero
 {
@@ -45,6 +46,30 @@ namespace YoungHero
             {
                 return;
             }
+        }
+
+        private async void confrimButton_Click(object sender, EventArgs e)
+        {
+            saveJson.m_iMoney = this.MoneyTextBox.Text;
+            saveJson.m_iAttributePoints = this.AttributePointsTextBox.Text;
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Save File|*.Save";
+            sfd.InitialDirectory = Properties.Settings.Default.pathName;
+            sfd.ShowDialog();
+
+            if(string.IsNullOrEmpty(sfd.FileName))
+            {
+                return;
+            }
+
+            StreamWriter sw = new StreamWriter(sfd.FileName);
+
+            await sw.WriteAsync(JsonConvert.SerializeObject(saveJson));
+            sw.Close();
+
+            MessageBox.Show("存檔完成", "存檔");
+            this.Close();
         }
     }
 }

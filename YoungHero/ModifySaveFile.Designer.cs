@@ -34,6 +34,7 @@
             this.AttributePointsTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
+            this.confrimButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -89,11 +90,22 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // confrimButton
+            // 
+            this.confrimButton.Location = new System.Drawing.Point(719, 79);
+            this.confrimButton.Name = "confrimButton";
+            this.confrimButton.Size = new System.Drawing.Size(75, 23);
+            this.confrimButton.TabIndex = 6;
+            this.confrimButton.Text = "返回";
+            this.confrimButton.UseVisualStyleBackColor = true;
+            this.confrimButton.Click += new System.EventHandler(this.confrimButton_Click);
+            // 
             // ModifySaveFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 495);
+            this.Controls.Add(this.confrimButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.AttributePointsTextBox);
             this.Controls.Add(this.label1);
@@ -115,5 +127,6 @@
         private System.Windows.Forms.TextBox AttributePointsTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button confrimButton;
     }
 }
