@@ -38,6 +38,7 @@
             this.NpcTabPage = new System.Windows.Forms.TabPage();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
             this.NpcListBox = new System.Windows.Forms.ListBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.NpcTabPage.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +110,7 @@
             // 
             // NpcTabPage
             // 
+            this.NpcTabPage.Controls.Add(this.checkBox1);
             this.NpcTabPage.Controls.Add(this.NpcListBox);
             this.NpcTabPage.Location = new System.Drawing.Point(4, 22);
             this.NpcTabPage.Name = "NpcTabPage";
@@ -137,6 +139,17 @@
             this.NpcListBox.Size = new System.Drawing.Size(120, 316);
             this.NpcListBox.TabIndex = 8;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 6);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(72, 16);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "只有隊友";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // ModifySaveFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -153,6 +166,7 @@
             this.Text = "ModifySaveFile";
             this.tabControl1.ResumeLayout(false);
             this.NpcTabPage.ResumeLayout(false);
+            this.NpcTabPage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +183,6 @@
         private System.Windows.Forms.TabPage NpcTabPage;
         private System.Windows.Forms.TabPage ItemTabPage;
         private System.Windows.Forms.ListBox NpcListBox;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

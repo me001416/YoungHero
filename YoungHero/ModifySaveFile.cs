@@ -29,21 +29,43 @@ namespace YoungHero
             this.MoneyTextBox.Text = saveJson.m_iMoney;
             this.AttributePointsTextBox.Text = saveJson.m_iAttributePoints;
 
+            UpdateNpcListBox();
+        }
+
+        private void UpdateNpcListBox()
+        {
+            NpcListBox.Items.Clear();
+
             foreach (dynamic npc in saveJson.m_NpcList)
             {
-                if(npc.NpcType == 1)
+                if (checkBox1.Checked)
+                {
+                    if (npc.NpcType == 1)
+                    {
+                        int npcID = npc.iNpcID.ToObject<Int32>();
+
+                        InitNpcListBox(npcID);
+                    }
+                }
+                else
                 {
                     int npcID = npc.iNpcID.ToObject<Int32>();
 
-                    if (npcList.IsPresent(npcID))
-                    {
-                        NpcListBox.Items.Add($"{npcList.ReturnName(npcID)}");
-                    }
-                    else
-                    {
-                        NpcListBox.Items.Add($"{npcID}");
-                    }                    
+                    InitNpcListBox(npcID);
                 }
+
+            }
+        }
+
+        private void InitNpcListBox(int SrcId)
+        {
+            if (npcList.IsPresent(SrcId))
+            {
+                NpcListBox.Items.Add($"{npcList.ReturnName(SrcId)}");
+            }
+            else
+            {
+                NpcListBox.Items.Add($"{SrcId}");
             }
         }
 
@@ -94,6 +116,11 @@ namespace YoungHero
                     NpcListBox.Visible = false;
                     break;
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateNpcListBox();
         }
     }
 }
