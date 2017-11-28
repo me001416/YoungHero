@@ -68,6 +68,7 @@
     <Compile Include="ModifySaveFile.Designer.cs">
       <DependentUpon>ModifySaveFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="NpcData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoadSaveFile.resx">

@@ -9,6 +9,7 @@ namespace YoungHero
     public partial class ModifySaveFile : Form
     {
         dynamic saveJson;
+        NpcList npcList;
 
         public ModifySaveFile()
         {
@@ -24,6 +25,8 @@ namespace YoungHero
 
         private void Initial()
         {
+            npcList = new NpcList();
+
             this.MoneyTextBox.Text = saveJson.m_iMoney;
             this.AttributePointsTextBox.Text = saveJson.m_iAttributePoints;
 
@@ -31,7 +34,16 @@ namespace YoungHero
             {
                 if(npc.NpcType == 1)
                 {
-                    NpcListBox.Items.Add("");
+                    int npcID = npc.iNpcID.ToObject<Int32>();
+
+                    if (npcList.IsPresent(npcID))
+                    {
+                        NpcListBox.Items.Add($"{npcList.ReturnName(npcID)}");
+                    }
+                    else
+                    {
+                        NpcListBox.Items.Add($"{npcID}");
+                    }                    
                 }
             }
         }

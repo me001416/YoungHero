@@ -43,6 +43,8 @@ namespace YoungHero
 
         public NpcList()
         {
+            npcList = new List<NpcData>();
+
             npcList.Add(new NpcData(210001, "谷月軒"));
             npcList.Add(new NpcData(200022, "塔婭"));
             npcList.Add(new NpcData(200039, "岳胖子"));
