@@ -79,5 +79,20 @@ namespace YoungHero
 
             return str;
         }
+
+        public int ReturnId(string SrcName)
+        {
+            int result = 0;
+
+            npcList.ForEach(x =>
+            {
+                if (x.NpcName == SrcName)
+                {
+                    result = x.NpcId;
+                }
+            });
+
+            return result;
+        }
     }
 }

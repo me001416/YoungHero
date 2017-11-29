@@ -53,7 +53,6 @@ namespace YoungHero
 
                     InitNpcListBox(npcID);
                 }
-
             }
         }
 
@@ -121,6 +120,19 @@ namespace YoungHero
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             UpdateNpcListBox();
+        }
+
+        private void NpcListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(NpcListBox.SelectedItem.ToString(), "Test");
+            string selectNpc = NpcListBox.SelectedItem.ToString();
+
+
+
+            foreach (dynamic npc in saveJson.m_NpcList)
+            {
+                
+            }
         }
     }
 }
