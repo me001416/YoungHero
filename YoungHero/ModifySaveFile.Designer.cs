@@ -51,6 +51,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.IntTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.MaxDexTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.MaxIntTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.MaxConTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.MaxStrTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.s.SuspendLayout();
             this.SuspendLayout();
@@ -122,6 +130,14 @@
             // 
             // s
             // 
+            this.s.Controls.Add(this.MaxDexTextBox);
+            this.s.Controls.Add(this.label8);
+            this.s.Controls.Add(this.MaxIntTextBox);
+            this.s.Controls.Add(this.label9);
+            this.s.Controls.Add(this.MaxConTextBox);
+            this.s.Controls.Add(this.label10);
+            this.s.Controls.Add(this.MaxStrTextBox);
+            this.s.Controls.Add(this.label11);
             this.s.Controls.Add(this.DexTextBox);
             this.s.Controls.Add(this.label6);
             this.s.Controls.Add(this.IntTextBox);
@@ -149,7 +165,7 @@
             this.ItemTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemTabPage.Name = "ItemTabPage";
             this.ItemTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ItemTabPage.Size = new System.Drawing.Size(644, 337);
+            this.ItemTabPage.Size = new System.Drawing.Size(644, 429);
             this.ItemTabPage.TabIndex = 1;
             this.ItemTabPage.Text = "ITEM";
             this.ItemTabPage.UseVisualStyleBackColor = true;
@@ -177,7 +193,7 @@
             // 
             // SpTextBox
             // 
-            this.SpTextBox.Location = new System.Drawing.Point(64, 78);
+            this.SpTextBox.Location = new System.Drawing.Point(66, 78);
             this.SpTextBox.Name = "SpTextBox";
             this.SpTextBox.Size = new System.Drawing.Size(100, 22);
             this.SpTextBox.TabIndex = 11;
@@ -194,7 +210,7 @@
             // 
             // HpTextBox
             // 
-            this.HpTextBox.Location = new System.Drawing.Point(64, 50);
+            this.HpTextBox.Location = new System.Drawing.Point(66, 50);
             this.HpTextBox.Name = "HpTextBox";
             this.HpTextBox.Size = new System.Drawing.Size(100, 22);
             this.HpTextBox.TabIndex = 9;
@@ -211,7 +227,7 @@
             // 
             // ConTextBox
             // 
-            this.ConTextBox.Location = new System.Drawing.Point(64, 131);
+            this.ConTextBox.Location = new System.Drawing.Point(66, 131);
             this.ConTextBox.Name = "ConTextBox";
             this.ConTextBox.Size = new System.Drawing.Size(100, 22);
             this.ConTextBox.TabIndex = 15;
@@ -228,7 +244,7 @@
             // 
             // StrTextBox
             // 
-            this.StrTextBox.Location = new System.Drawing.Point(64, 103);
+            this.StrTextBox.Location = new System.Drawing.Point(66, 103);
             this.StrTextBox.Name = "StrTextBox";
             this.StrTextBox.Size = new System.Drawing.Size(100, 22);
             this.StrTextBox.TabIndex = 13;
@@ -245,7 +261,7 @@
             // 
             // DexTextBox
             // 
-            this.DexTextBox.Location = new System.Drawing.Point(64, 187);
+            this.DexTextBox.Location = new System.Drawing.Point(66, 187);
             this.DexTextBox.Name = "DexTextBox";
             this.DexTextBox.Size = new System.Drawing.Size(100, 22);
             this.DexTextBox.TabIndex = 19;
@@ -262,7 +278,7 @@
             // 
             // IntTextBox
             // 
-            this.IntTextBox.Location = new System.Drawing.Point(64, 159);
+            this.IntTextBox.Location = new System.Drawing.Point(66, 159);
             this.IntTextBox.Name = "IntTextBox";
             this.IntTextBox.Size = new System.Drawing.Size(100, 22);
             this.IntTextBox.TabIndex = 17;
@@ -276,6 +292,74 @@
             this.label7.Size = new System.Drawing.Size(40, 16);
             this.label7.TabIndex = 16;
             this.label7.Text = "悟性";
+            // 
+            // MaxDexTextBox
+            // 
+            this.MaxDexTextBox.Location = new System.Drawing.Point(250, 187);
+            this.MaxDexTextBox.Name = "MaxDexTextBox";
+            this.MaxDexTextBox.Size = new System.Drawing.Size(100, 22);
+            this.MaxDexTextBox.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.Location = new System.Drawing.Point(172, 187);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 16);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "身法上限";
+            // 
+            // MaxIntTextBox
+            // 
+            this.MaxIntTextBox.Location = new System.Drawing.Point(250, 159);
+            this.MaxIntTextBox.Name = "MaxIntTextBox";
+            this.MaxIntTextBox.Size = new System.Drawing.Size(100, 22);
+            this.MaxIntTextBox.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.Location = new System.Drawing.Point(172, 159);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 16);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "悟性上限";
+            // 
+            // MaxConTextBox
+            // 
+            this.MaxConTextBox.Location = new System.Drawing.Point(250, 131);
+            this.MaxConTextBox.Name = "MaxConTextBox";
+            this.MaxConTextBox.Size = new System.Drawing.Size(100, 22);
+            this.MaxConTextBox.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label10.Location = new System.Drawing.Point(172, 131);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 16);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "根骨上限";
+            // 
+            // MaxStrTextBox
+            // 
+            this.MaxStrTextBox.Location = new System.Drawing.Point(250, 103);
+            this.MaxStrTextBox.Name = "MaxStrTextBox";
+            this.MaxStrTextBox.Size = new System.Drawing.Size(100, 22);
+            this.MaxStrTextBox.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(172, 103);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 16);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "臂力上限";
             // 
             // ModifySaveFile
             // 
@@ -323,5 +407,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox IntTextBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox MaxDexTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox MaxIntTextBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox MaxConTextBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox MaxStrTextBox;
+        private System.Windows.Forms.Label label11;
     }
 }
