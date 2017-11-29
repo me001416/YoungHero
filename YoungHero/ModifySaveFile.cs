@@ -104,19 +104,6 @@ namespace YoungHero
             this.Close();
         }
 
-        private void tabControl1_Selected(object sender, TabControlEventArgs e)
-        {
-            switch (tabControl1.TabPages[e.TabPageIndex].Name)
-            {
-                case "NpcTabPage":
-                    NpcListBox.Visible = true;
-                    break;
-                default:
-                    NpcListBox.Visible = false;
-                    break;
-            }
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             UpdateNpcListBox();
@@ -126,12 +113,37 @@ namespace YoungHero
         {
             //MessageBox.Show(NpcListBox.SelectedItem.ToString(), "Test");
             string selectNpc = NpcListBox.SelectedItem.ToString();
+            int IdResult = npcList.ReturnId(selectNpc);
 
-
+            if(IdResult == 0)
+            {
+                try
+                {
+                    IdResult = Int32.Parse(selectNpc);
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
 
             foreach (dynamic npc in saveJson.m_NpcList)
             {
-                
+                int tempNpcID = npc.iNpcID.ToObject<Int32>();
+
+                if (IdResult == tempNpcID)
+                {
+                    HpTextBox.Text = npc.iMaxHp;
+                    SpTextBox.Text = npc.iMaxSp;
+                    StrTextBox.Text = npc.iStr;
+                    ConTextBox.Text = npc.iCon;
+                    IntTextBox.Text = npc.iInt;
+                    DexTextBox.Text = npc.iDex;
+                    MaxStrTextBox.Text = npc.iMaxStr;
+                    MaxConTextBox.Text = npc.iMaxCon;
+                    MaxIntTextBox.Text = npc.iMaxInt;
+                    MaxDexTextBox.Text = npc.iMaxDex;
+                }
             }
         }
     }
