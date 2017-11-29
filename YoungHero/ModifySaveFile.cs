@@ -111,7 +111,6 @@ namespace YoungHero
 
         private void NpcListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //MessageBox.Show(NpcListBox.SelectedItem.ToString(), "Test");
             string selectNpc = NpcListBox.SelectedItem.ToString();
             int IdResult = npcList.ReturnId(selectNpc);
 
