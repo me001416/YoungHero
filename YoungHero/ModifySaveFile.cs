@@ -9,6 +9,7 @@ namespace YoungHero
     {
         dynamic saveJson;
         NpcList npcList;
+        int TempNpcID;
 
         public ModifySaveFile()
         {
@@ -82,7 +83,7 @@ namespace YoungHero
 
         private async void confrimButton_Click(object sender, EventArgs e)
         {
-            saveJson.m_iMoney = this.MoneyTextBox.Text;
+            
             saveJson.m_iAttributePoints = this.AttributePointsTextBox.Text;
 
             SaveFileDialog sfd = new SaveFileDialog();
@@ -128,9 +129,9 @@ namespace YoungHero
 
             foreach (dynamic npc in saveJson.m_NpcList)
             {
-                int tempNpcID = npc.iNpcID.ToObject<Int32>();
+                TempNpcID = npc.iNpcID.ToObject<Int32>();
 
-                if (IdResult == tempNpcID)
+                if (IdResult == TempNpcID)
                 {
                     HpTextBox.Text = npc.iMaxHp;
                     SpTextBox.Text = npc.iMaxSp;
@@ -144,6 +145,17 @@ namespace YoungHero
                     MaxDexTextBox.Text = npc.iMaxDex;
                 }
             }
+        }
+
+        private void MoneyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //saveJson.m_iMoney = this.MoneyTextBox.Text;
+            //MessageBox.Show("MoneyTextBox", "Test");
+        }
+
+        private void MoneyTextBox_Enter(object sender, EventArgs e)
+        {
+            MessageBox.Show("MoneyTextBox", "Test");
         }
     }
 }
