@@ -62,22 +62,28 @@ namespace YoungHero
 
         private void FormatDataFile(string SrcStr)
         {
+            DataString ds = new DataString();
             StringBuilder sb = new StringBuilder();
-            string sep = "\t";
-            string[] splitContent = SrcStr.Split(sep.ToCharArray());
-
-            foreach(var str in splitContent)
-            {
-                sb.Append(str);
-            }
-
-            MessageBox.Show(sb.ToString(), "FormatDataFile");
+            char sep1 = '\n';
+            char sep2 = '\t';
 
             for (var i = 0; i < SrcStr.Length; i++)
             {
                 char ch = SrcStr[i];
-                
-                if(char.IsControl(ch))
+
+                if (ch == sep1)
+                {
+
+                    continue;
+                }
+
+                if (ch == sep2)
+                {
+
+                    continue;
+                }
+
+                if (char.IsControl(ch))
                 {
                     continue;
                 }
@@ -85,9 +91,57 @@ namespace YoungHero
                 sb.Append(ch);
             }
 
-            //MessageBox.Show(sb.ToString(), "FormatDataFile");
+            MessageBox.Show(sb.ToString(), "FormatDataFile");
 
             return;
+        }
+    }
+
+    public class DataStringList
+    {
+        List<DataString> dsList;
+
+        public DataStringList()
+        {
+            dsList = new List<DataString>();
+        }
+
+        public void Add(StringBuilder SrcSb)
+        {
+            dsList[dsList.Count - 1].Add(SrcSb);
+        }
+
+        public void Add(StringBuilder SrcSb, int SrcIndex)
+        {
+            dsList[SrcIndex].Add(SrcSb);
+        }
+
+        public void New(int SrcIndex)
+        {
+            dsList.Add(new DataString(SrcIndex));
+        }
+    }
+
+    public class DataString
+    {
+        List<StringBuilder> SbList;
+        int Index;
+
+        public DataString()
+        {
+            Index = 0;
+            SbList = new List<StringBuilder>();
+        }
+
+        public DataString(int SrcIndex)
+        {
+            Index = SrcIndex;
+            SbList = new List<StringBuilder>();
+        }
+
+        public void Add(StringBuilder SrcSb)
+        {
+            SbList.Add(SrcSb);
         }
     }
 }
