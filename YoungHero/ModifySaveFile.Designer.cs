@@ -79,8 +79,8 @@
             this.MoneyTextBox.Name = "MoneyTextBox";
             this.MoneyTextBox.Size = new System.Drawing.Size(100, 22);
             this.MoneyTextBox.TabIndex = 2;
-            this.MoneyTextBox.TextChanged += new System.EventHandler(this.MoneyTextBox_TextChanged);
-            this.MoneyTextBox.Enter += new System.EventHandler(this.MoneyTextBox_Enter);
+            this.MoneyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.MoneyTextBox.Leave += new System.EventHandler(this.MoneyTextBox_Leave);
             // 
             // AttributePointsTextBox
             // 
@@ -88,6 +88,7 @@
             this.AttributePointsTextBox.Name = "AttributePointsTextBox";
             this.AttributePointsTextBox.Size = new System.Drawing.Size(100, 22);
             this.AttributePointsTextBox.TabIndex = 4;
+            this.AttributePointsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label1
             // 
@@ -167,6 +168,7 @@
             this.MaxDexTextBox.Name = "MaxDexTextBox";
             this.MaxDexTextBox.Size = new System.Drawing.Size(100, 22);
             this.MaxDexTextBox.TabIndex = 27;
+            this.MaxDexTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label8
             // 
@@ -184,6 +186,7 @@
             this.MaxIntTextBox.Name = "MaxIntTextBox";
             this.MaxIntTextBox.Size = new System.Drawing.Size(100, 22);
             this.MaxIntTextBox.TabIndex = 25;
+            this.MaxIntTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label9
             // 
@@ -201,6 +204,7 @@
             this.MaxConTextBox.Name = "MaxConTextBox";
             this.MaxConTextBox.Size = new System.Drawing.Size(100, 22);
             this.MaxConTextBox.TabIndex = 23;
+            this.MaxConTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label10
             // 
@@ -218,6 +222,7 @@
             this.MaxStrTextBox.Name = "MaxStrTextBox";
             this.MaxStrTextBox.Size = new System.Drawing.Size(100, 22);
             this.MaxStrTextBox.TabIndex = 21;
+            this.MaxStrTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label11
             // 
@@ -235,6 +240,7 @@
             this.DexTextBox.Name = "DexTextBox";
             this.DexTextBox.Size = new System.Drawing.Size(100, 22);
             this.DexTextBox.TabIndex = 19;
+            this.DexTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label6
             // 
@@ -252,6 +258,7 @@
             this.IntTextBox.Name = "IntTextBox";
             this.IntTextBox.Size = new System.Drawing.Size(100, 22);
             this.IntTextBox.TabIndex = 17;
+            this.IntTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label7
             // 
@@ -269,6 +276,7 @@
             this.ConTextBox.Name = "ConTextBox";
             this.ConTextBox.Size = new System.Drawing.Size(100, 22);
             this.ConTextBox.TabIndex = 15;
+            this.ConTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label4
             // 
@@ -286,6 +294,7 @@
             this.StrTextBox.Name = "StrTextBox";
             this.StrTextBox.Size = new System.Drawing.Size(100, 22);
             this.StrTextBox.TabIndex = 13;
+            this.StrTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label5
             // 
@@ -303,6 +312,7 @@
             this.SpTextBox.Name = "SpTextBox";
             this.SpTextBox.Size = new System.Drawing.Size(100, 22);
             this.SpTextBox.TabIndex = 11;
+            this.SpTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // checkBox1
             // 
@@ -341,6 +351,7 @@
             this.HpTextBox.Name = "HpTextBox";
             this.HpTextBox.Size = new System.Drawing.Size(100, 22);
             this.HpTextBox.TabIndex = 9;
+            this.HpTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // label3
             // 

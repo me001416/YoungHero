@@ -147,15 +147,18 @@ namespace YoungHero
             }
         }
 
-        private void MoneyTextBox_TextChanged(object sender, EventArgs e)
+        private void MoneyTextBox_Leave(object sender, EventArgs e)
         {
-            //saveJson.m_iMoney = this.MoneyTextBox.Text;
-            //MessageBox.Show("MoneyTextBox", "Test");
+            //MessageBox.Show("Leave", "MoneyTextBox_Leave");
         }
 
-        private void MoneyTextBox_Enter(object sender, EventArgs e)
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            MessageBox.Show("MoneyTextBox", "Test");
+            //MessageBox.Show(e.KeyChar.ToString(), "TextBox_KeyPress");
+            if(!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
