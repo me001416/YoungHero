@@ -9,7 +9,7 @@ namespace YoungHero
     {
         dynamic saveJson;
         NpcList npcList;
-        int TempNpcID;
+        int CurrentNpcID;
 
         public ModifySaveFile()
         {
@@ -26,6 +26,7 @@ namespace YoungHero
         private void Initial()
         {
             npcList = new NpcList();
+            CurrentNpcID = 0;
 
             this.MoneyTextBox.Text = saveJson.m_iMoney;
             this.AttributePointsTextBox.Text = saveJson.m_iAttributePoints;
@@ -83,7 +84,6 @@ namespace YoungHero
 
         private async void confrimButton_Click(object sender, EventArgs e)
         {
-            
             saveJson.m_iAttributePoints = this.AttributePointsTextBox.Text;
 
             SaveFileDialog sfd = new SaveFileDialog();
@@ -129,7 +129,7 @@ namespace YoungHero
 
             foreach (dynamic npc in saveJson.m_NpcList)
             {
-                TempNpcID = npc.iNpcID.ToObject<Int32>();
+                int TempNpcID = npc.iNpcID.ToObject<Int32>();
 
                 if (IdResult == TempNpcID)
                 {
@@ -143,23 +143,54 @@ namespace YoungHero
                     MaxConTextBox.Text = npc.iMaxCon;
                     MaxIntTextBox.Text = npc.iMaxInt;
                     MaxDexTextBox.Text = npc.iMaxDex;
+
+                    CurrentNpcID = IdResult;
                 }
             }
         }
 
-        private void MoneyTextBox_Leave(object sender, EventArgs e)
+        private void TextBox_Group1_Leave(object sender, EventArgs e)
         {
-            //MessageBox.Show("Leave", "MoneyTextBox_Leave");
-            //MessageBox.Show(sender.Equals, "MoneyTextBox_Leave");
-            //MessageBox.Show(e., "MoneyTextBox_Leave");
+            saveJson.m_iMoney = this.MoneyTextBox.Text;
+            saveJson.m_iAttributePoints = this.AttributePointsTextBox.Text;
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //MessageBox.Show(e.KeyChar.ToString(), "TextBox_KeyPress");
             if(!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void TextBox_Group2_Leave(object sender, EventArgs e)
+        {
+            //MessageBox.Show(HpTextBox.Text, "TextBox_Group2_Leave");
+
+            int PointNpcId = 0;
+
+            if(CurrentNpcID == 0)
+            {
+                return;
+            }
+
+            foreach (dynamic npc in saveJson.m_NpcList)
+            {
+                PointNpcId = npc.iNpcID.ToObject<Int32>();
+
+                if (PointNpcId == CurrentNpcID)
+                {
+                    npc.iMaxHp = HpTextBox.Text;
+                    npc.iMaxSp = SpTextBox.Text;
+                    npc.iStr = StrTextBox.Text;
+                    npc.iCon = ConTextBox.Text;
+                    npc.iInt = IntTextBox.Text;
+                    npc.iDex = DexTextBox.Text;
+                    npc.iMaxStr = MaxStrTextBox.Text;
+                    npc.iMaxCon = MaxConTextBox.Text;
+                    npc.iMaxInt = MaxIntTextBox.Text;
+                    npc.iMaxDex = MaxDexTextBox.Text;
+                }
             }
         }
     }

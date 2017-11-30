@@ -59,6 +59,14 @@
             this.HpTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.CriTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.MoveTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.CounterTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.DodgeTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.s.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +88,7 @@
             this.MoneyTextBox.Size = new System.Drawing.Size(100, 22);
             this.MoneyTextBox.TabIndex = 2;
             this.MoneyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.MoneyTextBox.Leave += new System.EventHandler(this.MoneyTextBox_Leave);
+            this.MoneyTextBox.Leave += new System.EventHandler(this.TextBox_Group1_Leave);
             // 
             // AttributePointsTextBox
             // 
@@ -89,6 +97,7 @@
             this.AttributePointsTextBox.Size = new System.Drawing.Size(100, 22);
             this.AttributePointsTextBox.TabIndex = 4;
             this.AttributePointsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.AttributePointsTextBox.Leave += new System.EventHandler(this.TextBox_Group1_Leave);
             // 
             // label1
             // 
@@ -127,11 +136,19 @@
             this.tabControl1.Location = new System.Drawing.Point(29, 93);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(652, 455);
+            this.tabControl1.Size = new System.Drawing.Size(675, 469);
             this.tabControl1.TabIndex = 7;
             // 
             // s
             // 
+            this.s.Controls.Add(this.DodgeTextBox);
+            this.s.Controls.Add(this.label15);
+            this.s.Controls.Add(this.CounterTextBox);
+            this.s.Controls.Add(this.label14);
+            this.s.Controls.Add(this.MoveTextBox);
+            this.s.Controls.Add(this.label13);
+            this.s.Controls.Add(this.CriTextBox);
+            this.s.Controls.Add(this.label12);
             this.s.Controls.Add(this.MaxDexTextBox);
             this.s.Controls.Add(this.label8);
             this.s.Controls.Add(this.MaxIntTextBox);
@@ -157,7 +174,7 @@
             this.s.Location = new System.Drawing.Point(4, 22);
             this.s.Name = "s";
             this.s.Padding = new System.Windows.Forms.Padding(3);
-            this.s.Size = new System.Drawing.Size(644, 429);
+            this.s.Size = new System.Drawing.Size(667, 443);
             this.s.TabIndex = 0;
             this.s.Text = "NPC";
             this.s.UseVisualStyleBackColor = true;
@@ -317,6 +334,8 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(6, 6);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(72, 16);
@@ -341,7 +360,7 @@
             this.NpcListBox.ItemHeight = 12;
             this.NpcListBox.Location = new System.Drawing.Point(518, 6);
             this.NpcListBox.Name = "NpcListBox";
-            this.NpcListBox.Size = new System.Drawing.Size(120, 400);
+            this.NpcListBox.Size = new System.Drawing.Size(125, 412);
             this.NpcListBox.TabIndex = 8;
             this.NpcListBox.SelectedIndexChanged += new System.EventHandler(this.NpcListBox_SelectedIndexChanged);
             // 
@@ -352,6 +371,7 @@
             this.HpTextBox.Size = new System.Drawing.Size(100, 22);
             this.HpTextBox.TabIndex = 9;
             this.HpTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.HpTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label3
             // 
@@ -373,11 +393,79 @@
             this.ItemTabPage.Text = "ITEM";
             this.ItemTabPage.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label12.Location = new System.Drawing.Point(6, 215);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 16);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "暴擊";
+            // 
+            // CriTextBox
+            // 
+            this.CriTextBox.Location = new System.Drawing.Point(66, 215);
+            this.CriTextBox.Name = "CriTextBox";
+            this.CriTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CriTextBox.TabIndex = 29;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label13.Location = new System.Drawing.Point(172, 50);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 16);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "移動";
+            // 
+            // MoveTextBox
+            // 
+            this.MoveTextBox.Location = new System.Drawing.Point(250, 50);
+            this.MoveTextBox.Name = "MoveTextBox";
+            this.MoveTextBox.Size = new System.Drawing.Size(100, 22);
+            this.MoveTextBox.TabIndex = 31;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label14.Location = new System.Drawing.Point(6, 243);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 16);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "反擊";
+            // 
+            // CounterTextBox
+            // 
+            this.CounterTextBox.Location = new System.Drawing.Point(66, 243);
+            this.CounterTextBox.Name = "CounterTextBox";
+            this.CounterTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CounterTextBox.TabIndex = 33;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label15.Location = new System.Drawing.Point(6, 271);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 16);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "閃避";
+            // 
+            // DodgeTextBox
+            // 
+            this.DodgeTextBox.Location = new System.Drawing.Point(66, 271);
+            this.DodgeTextBox.Name = "DodgeTextBox";
+            this.DodgeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DodgeTextBox.TabIndex = 35;
+            // 
             // ModifySaveFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 560);
+            this.ClientSize = new System.Drawing.Size(876, 574);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.confrimButton);
             this.Controls.Add(this.backButton);
@@ -427,5 +515,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox MaxStrTextBox;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox CriTextBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox DodgeTextBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox CounterTextBox;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox MoveTextBox;
+        private System.Windows.Forms.Label label13;
     }
 }
