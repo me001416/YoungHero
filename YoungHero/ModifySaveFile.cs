@@ -150,6 +150,8 @@ namespace YoungHero
         private void MoneyTextBox_Leave(object sender, EventArgs e)
         {
             //MessageBox.Show("Leave", "MoneyTextBox_Leave");
+            //MessageBox.Show(sender.Equals, "MoneyTextBox_Leave");
+            //MessageBox.Show(e., "MoneyTextBox_Leave");
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
