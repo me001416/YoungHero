@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace YoungHero
 {
@@ -65,32 +66,27 @@ namespace YoungHero
         {
             DataStringList ds = new DataStringList();
             StringBuilder sb = new StringBuilder();
-            char sep1 = '\n';
-            char sep2 = '\t';
+            string sep1 = "\n";
+            string sep2 = "\t";
 
             for (var i = 0; i < SrcStr.Length; i++)
             {
-                char ch = SrcStr[i];
+                string str = StringInfo.GetNextTextElement(SrcStr,i);
 
-                if (ch == sep1)
+                if (str == sep1)
                 {
                     ds.New();
                     continue;
                 }
 
-                if (ch == sep2)
+                if (str == sep2)
                 {
                     ds.Add(sb);
                     sb = new StringBuilder();
                     continue;
                 }
 
-                if (char.IsControl(ch))
-                {
-                    continue;
-                }
-
-                sb.Append(ch);
+                sb.Append(str);
             }
 
             //MessageBox.Show(sb.ToString(), "FormatDataFile");
@@ -102,6 +98,9 @@ namespace YoungHero
                 sb.Append(x.SbList[0]);
                 sb.Append(x.SbList[1]);
             });
+
+            //sb.Append(ds.dsList[3].SbList[1]);
+            //sb.Append(ds.dsList[3].SbList[2]);
 
             //MessageBox.Show(sb.ToString(), "FormatDataFile");
             sStr = sb.ToString();
@@ -115,6 +114,7 @@ namespace YoungHero
             sfd.Filter = "Txt File|*.txt";
             sfd.InitialDirectory = Properties.Settings.Default.dataPathName;
             sfd.ShowDialog();
+            StringBuilder sb = new StringBuilder();
 
             if (string.IsNullOrEmpty(sfd.FileName))
             {
@@ -126,13 +126,35 @@ namespace YoungHero
                 return;
             }
 
+            foreach (var en in Encoding.GetEncodings())
+            {
+                byte[] unknow = Encoding.GetEncoding(en.CodePage).GetBytes(sStr);
+                string result = Encoding.GetEncoding(950).GetString(unknow);
+                sb.AppendLine(string.Format("{0} => {1} : {2}", en.CodePage, 950, result));
+            }
+
             StreamWriter sw = new StreamWriter(sfd.FileName);
 
-            await sw.WriteAsync(sStr);
+            //await sw.WriteAsync(sStr);
+            await sw.WriteAsync(sb.ToString());
             sw.Close();
 
             MessageBox.Show("存檔完成", "存檔");
             this.Close();
+        }
+
+        static void savebig5()
+        {
+            StringBuilder sb = new StringBuilder();
+            string source = "⊃;nÅé&frac14;Ò⊃;Õ¤¤ªº¤@¯ë©Ê¿ù»~¡G&frac14;Ð·Ç GUI (⊃;Ï§Î¤Æ¥Î¤á¤¶­±)¡C";
+
+            foreach (var e in Encoding.GetEncodings())
+            {
+                byte[] unknow = Encoding.GetEncoding(e.CodePage).GetBytes(source);
+                string result = Encoding.GetEncoding(950).GetString(unknow);
+                sb.AppendLine(string.Format("{0} => {1} : {2}", e.CodePage, 950, result));
+            }
+            File.WriteAllText("big5.txt", sb.ToString());
         }
     }
 
