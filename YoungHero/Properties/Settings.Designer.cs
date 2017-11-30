@@ -34,5 +34,17 @@ namespace YoungHero.Properties {
                 this["pathName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dataPathName {
+            get {
+                return ((string)(this["dataPathName"]));
+            }
+            set {
+                this["dataPathName"] = value;
+            }
+        }
     }
 }

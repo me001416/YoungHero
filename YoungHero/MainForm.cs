@@ -22,5 +22,13 @@ namespace YoungHero
         {
             Application.Exit();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataMaker dmk = new DataMaker();
+            dmk.Top = this.Top;
+            dmk.Left = this.Left;
+            dmk.ShowDialog();
+        }
     }
 }
