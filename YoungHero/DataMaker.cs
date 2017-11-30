@@ -14,8 +14,9 @@ namespace YoungHero
 {
     public partial class DataMaker : Form
     {
-        String FileName;
+        string FileName;
         //dynamic saveJson;
+        string sStr;
 
         public DataMaker()
         {
@@ -62,7 +63,7 @@ namespace YoungHero
 
         private void FormatDataFile(string SrcStr)
         {
-            DataString ds = new DataString();
+            DataStringList ds = new DataStringList();
             StringBuilder sb = new StringBuilder();
             char sep1 = '\n';
             char sep2 = '\t';
@@ -73,13 +74,14 @@ namespace YoungHero
 
                 if (ch == sep1)
                 {
-
+                    ds.New();
                     continue;
                 }
 
                 if (ch == sep2)
                 {
-
+                    ds.Add(sb);
+                    sb = new StringBuilder();
                     continue;
                 }
 
@@ -91,15 +93,52 @@ namespace YoungHero
                 sb.Append(ch);
             }
 
-            MessageBox.Show(sb.ToString(), "FormatDataFile");
+            //MessageBox.Show(sb.ToString(), "FormatDataFile");
+
+            sb = new StringBuilder();
+
+            ds.dsList.ForEach(x =>
+            {
+                sb.Append(x.SbList[0]);
+                sb.Append(x.SbList[1]);
+            });
+
+            //MessageBox.Show(sb.ToString(), "FormatDataFile");
+            sStr = sb.ToString();
 
             return;
+        }
+
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Txt File|*.txt";
+            sfd.InitialDirectory = Properties.Settings.Default.dataPathName;
+            sfd.ShowDialog();
+
+            if (string.IsNullOrEmpty(sfd.FileName))
+            {
+                return;
+            }
+
+            if(string.IsNullOrEmpty(sStr))
+            {
+                return;
+            }
+
+            StreamWriter sw = new StreamWriter(sfd.FileName);
+
+            await sw.WriteAsync(sStr);
+            sw.Close();
+
+            MessageBox.Show("存檔完成", "存檔");
+            this.Close();
         }
     }
 
     public class DataStringList
     {
-        List<DataString> dsList;
+        public List<DataString> dsList { get; private set; }
 
         public DataStringList()
         {
@@ -108,12 +147,22 @@ namespace YoungHero
 
         public void Add(StringBuilder SrcSb)
         {
+            if (dsList.Count == 0)
+            {
+                this.New();
+            }
+
             dsList[dsList.Count - 1].Add(SrcSb);
         }
 
         public void Add(StringBuilder SrcSb, int SrcIndex)
         {
             dsList[SrcIndex].Add(SrcSb);
+        }
+
+        public void New()
+        {
+            dsList.Add(new DataString(dsList.Count - 1));
         }
 
         public void New(int SrcIndex)
@@ -124,7 +173,7 @@ namespace YoungHero
 
     public class DataString
     {
-        List<StringBuilder> SbList;
+        public List<StringBuilder> SbList { get; private set; }
         int Index;
 
         public DataString()
