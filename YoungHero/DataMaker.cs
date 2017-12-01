@@ -120,6 +120,11 @@ namespace YoungHero
                 return;
             }
 
+            if(string.IsNullOrEmpty(sStr))
+            {
+                return;
+            }
+
             StreamWriter sw = new StreamWriter(sfd.FileName);
 
             await sw.WriteAsync(sStr);
