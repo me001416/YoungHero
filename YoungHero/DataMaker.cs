@@ -65,7 +65,7 @@ namespace YoungHero
         private void FormatDataFile(string SrcStr)
         {
             DataStringList ds = new DataStringList();
-            StringBuilder sb = new StringBuilder();
+            string stringBox = string.Empty;
             string sep1 = "\n";
             string sep2 = "\t";
 
@@ -81,29 +81,28 @@ namespace YoungHero
 
                 if (str == sep2)
                 {
-                    ds.Add(sb);
-                    sb = new StringBuilder();
+                    ds.Add(stringBox);
+                    stringBox = string.Empty;
                     continue;
                 }
-
-                sb.Append(str);
+                
+                string.Concat(stringBox, str);
             }
 
             //MessageBox.Show(sb.ToString(), "FormatDataFile");
 
-            sb = new StringBuilder();
+            stringBox = string.Empty;
 
             ds.dsList.ForEach(x =>
             {
-                sb.Append(x.SbList[0]);
-                sb.Append(x.SbList[1]);
+                string.Concat(stringBox, x.SbList[0]);
             });
 
             //sb.Append(ds.dsList[3].SbList[1]);
             //sb.Append(ds.dsList[3].SbList[2]);
 
             //MessageBox.Show(sb.ToString(), "FormatDataFile");
-            sStr = sb.ToString();
+            sStr = stringBox.ToString();
 
             return;
         }
@@ -167,7 +166,7 @@ namespace YoungHero
             dsList = new List<DataString>();
         }
 
-        public void Add(StringBuilder SrcSb)
+        public void Add(string SrcSb)
         {
             if (dsList.Count == 0)
             {
@@ -177,7 +176,7 @@ namespace YoungHero
             dsList[dsList.Count - 1].Add(SrcSb);
         }
 
-        public void Add(StringBuilder SrcSb, int SrcIndex)
+        public void Add(string SrcSb, int SrcIndex)
         {
             dsList[SrcIndex].Add(SrcSb);
         }
@@ -195,16 +194,74 @@ namespace YoungHero
 
     public class DataString
     {
-        public List<StringBuilder> SbList { get; private set; }
+        public List<string> SbList { get; private set; }
         int Index;
 
         public DataString()
         {
             Index = 0;
-            SbList = new List<StringBuilder>();
+            SbList = new List<string>();
         }
 
         public DataString(int SrcIndex)
+        {
+            Index = SrcIndex;
+            SbList = new List<string>();
+        }
+
+        public void Add(string SrcSb)
+        {
+            SbList.Add(SrcSb);
+        }
+    }
+
+    public class DataStringBuilderList
+    {
+        public List<DataStringBuilder> dsList { get; private set; }
+
+        public DataStringBuilderList()
+        {
+            dsList = new List<DataStringBuilder>();
+        }
+
+        public void Add(StringBuilder SrcSb)
+        {
+            if (dsList.Count == 0)
+            {
+                this.New();
+            }
+
+            dsList[dsList.Count - 1].Add(SrcSb);
+        }
+
+        public void Add(StringBuilder SrcSb, int SrcIndex)
+        {
+            dsList[SrcIndex].Add(SrcSb);
+        }
+
+        public void New()
+        {
+            dsList.Add(new DataStringBuilder(dsList.Count - 1));
+        }
+
+        public void New(int SrcIndex)
+        {
+            dsList.Add(new DataStringBuilder(SrcIndex));
+        }
+    }
+
+    public class DataStringBuilder
+    {
+        public List<StringBuilder> SbList { get; private set; }
+        int Index;
+
+        public DataStringBuilder()
+        {
+            Index = 0;
+            SbList = new List<StringBuilder>();
+        }
+
+        public DataStringBuilder(int SrcIndex)
         {
             Index = SrcIndex;
             SbList = new List<StringBuilder>();
