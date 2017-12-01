@@ -89,20 +89,26 @@ namespace YoungHero
                 string.Concat(stringBox, str);
             }
 
-            //MessageBox.Show(sb.ToString(), "FormatDataFile");
+            //MessageBox.Show(stringBox, "FormatDataFile");
 
             stringBox = string.Empty;
 
             ds.dsList.ForEach(x =>
             {
-                string.Concat(stringBox, x.SbList[0]);
+                x.SbList.ForEach(y =>
+                {
+                    string.Concat(stringBox, y);
+                    string.Concat(stringBox, ",");
+                });
+                //string.Concat(stringBox, x.SbList[1]);
+                //string.Concat(stringBox, ",");
             });
 
             //sb.Append(ds.dsList[3].SbList[1]);
             //sb.Append(ds.dsList[3].SbList[2]);
 
-            //MessageBox.Show(sb.ToString(), "FormatDataFile");
-            sStr = stringBox.ToString();
+            MessageBox.Show(stringBox, "FormatDataFile");
+            sStr = stringBox;
 
             return;
         }
@@ -120,22 +126,10 @@ namespace YoungHero
                 return;
             }
 
-            if(string.IsNullOrEmpty(sStr))
-            {
-                return;
-            }
-
-            foreach (var en in Encoding.GetEncodings())
-            {
-                byte[] unknow = Encoding.GetEncoding(en.CodePage).GetBytes(sStr);
-                string result = Encoding.GetEncoding(950).GetString(unknow);
-                sb.AppendLine(string.Format("{0} => {1} : {2}", en.CodePage, 950, result));
-            }
-
             StreamWriter sw = new StreamWriter(sfd.FileName);
 
-            //await sw.WriteAsync(sStr);
-            await sw.WriteAsync(sb.ToString());
+            await sw.WriteAsync(sStr);
+            //await sw.WriteAsync(sb.ToString());
             sw.Close();
 
             MessageBox.Show("存檔完成", "存檔");
