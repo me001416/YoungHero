@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using YoungHero.StringManager;
 
 namespace YoungHero
 {
@@ -49,7 +50,7 @@ namespace YoungHero
 
         private void FileLoad()
         {
-            StreamReader SR = new StreamReader(this.FileName, Encoding.ASCII);
+            StreamReader SR = new StreamReader(this.FileName, System.Text.Encoding.Default);
             string FileStr = SR.ReadToEnd();
             //saveJson = JsonConvert.DeserializeObject(saveStr);
             FormatDataFile(FileStr);

@@ -77,6 +77,8 @@
     <Compile Include="NpcData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringManager\DataStringBuilderList.cs" />
+    <Compile Include="StringManager\DataStringList.cs" />
     <EmbeddedResource Include="DataMaker.resx">
       <DependentUpon>DataMaker.cs</DependentUpon>
     </EmbeddedResource>
