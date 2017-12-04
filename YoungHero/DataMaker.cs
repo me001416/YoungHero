@@ -52,7 +52,6 @@ namespace YoungHero
         {
             StreamReader SR = new StreamReader(this.FileName, System.Text.Encoding.Default);
             string FileStr = SR.ReadToEnd();
-            //saveJson = JsonConvert.DeserializeObject(saveStr);
             FormatDataFile(FileStr);
             SR.Close();
         }
@@ -63,6 +62,7 @@ namespace YoungHero
             StringBuilder sb = new StringBuilder();
             string sep1 = "\n";
             string sep2 = "\t";
+            bool IsFirstLine = true;
 
             for (var i = 0; i < SrcStr.Length; i++)
             {
@@ -70,18 +70,22 @@ namespace YoungHero
 
                 if (str == sep1)
                 {
+                    IsFirstLine = false;
                     ds.New();
                     continue;
                 }
 
                 if (str == sep2)
-                {
+                {                    
                     ds.Add(sb);
                     sb = new StringBuilder();
                     continue;
                 }
 
-                sb.Append(str);
+                if (!IsFirstLine)
+                {
+                    sb.Append(str);
+                }
             }
 
             //MessageBox.Show(stringBox, "FormatDataFile");
@@ -94,15 +98,10 @@ namespace YoungHero
                 {
                     sb.Append(y);
                     sb.Append(";");
-
-                    if (sb.Length > 0x100)
-                    {
-                        break;
-                    }
                 }
             }
 
-            MessageBox.Show(sb.ToString(), "FormatDataFile");
+            //MessageBox.Show(sb.ToString(), "FormatDataFile");
             sStr = sb.ToString();
 
             return;
