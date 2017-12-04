@@ -91,25 +91,9 @@ namespace YoungHero
                 }
             }
 
-
-            sb = new StringBuilder();
-
-            foreach(var x in ds.dsList)
-            {
-                foreach(var y in x.SbList)
-                {
-                    sb.Append(y);
-                }
-            }
-
-            sStr = sb.ToString();
+            sStr = ds.FormatFileData();
 
             return;
-        }
-
-        private void FormatFileData(string SrcStr)
-        {
-
         }
 
         private async void button3_Click(object sender, EventArgs e)
