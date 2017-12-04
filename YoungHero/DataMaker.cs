@@ -63,17 +63,11 @@ namespace YoungHero
             string sep1 = "\n";
             string sep2 = "\t";
             bool IsFirstLine = true;
+            bool IsWrap = false;
 
             for (var i = 0; i < SrcStr.Length; i++)
             {
                 string str = StringInfo.GetNextTextElement(SrcStr,i);
-
-                if (str == sep1)
-                {
-                    IsFirstLine = false;
-                    ds.New();
-                    continue;
-                }
 
                 if (str == sep2)
                 {
@@ -85,9 +79,25 @@ namespace YoungHero
                     continue;
                 }
 
+                if (str == sep1)
+                {
+                    IsFirstLine = false;
+                    IsWrap = true;
+
+                    ds.Add(sb);
+                    sb = new StringBuilder();
+                }
+
                 if (!IsFirstLine)
                 {
-                    sb.Append(str);
+                    if (IsWrap)
+                    {
+                        ds.New();
+                    }
+                    else
+                    {
+                        sb.Append(str);
+                    }
                 }
             }
 

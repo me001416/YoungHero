@@ -44,26 +44,6 @@ namespace YoungHero.StringManager
         {
             StringBuilder sb = new StringBuilder();
 
-            for(var i = 0; i < dsList.Count;i++)
-            {
-                if(dsList[i].SbList.Count < 3)
-                {
-                    if(i == 0)
-                    {
-                        continue;
-                    }
-
-                    foreach (var x in dsList[i].SbList)
-                    {
-                        dsList[i - 1].Add(x);
-                    }
-
-                    dsList.RemoveAt(i);
-
-                    i--;
-                }
-            }
-
             foreach (var x in dsList)
             {
                 sb.Append("(MarkHsu)\n");
