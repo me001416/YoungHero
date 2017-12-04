@@ -63,6 +63,7 @@ namespace YoungHero
             string sep1 = "\n";
             string sep2 = "\t";
             bool IsFirstLine = true;
+            bool IsWrap = false;
 
             for (var i = 0; i < SrcStr.Length; i++)
             {
@@ -71,9 +72,8 @@ namespace YoungHero
                 if (str == sep1)
                 {
                     IsFirstLine = false;
-                    sb.Append(",");
-                    ds.New();
-                    continue;
+                    IsWrap = true;
+                    str = ",";
                 }
 
                 if (str == sep2)
@@ -89,6 +89,12 @@ namespace YoungHero
                 if (!IsFirstLine)
                 {
                     sb.Append(str);
+
+                    if(IsWrap)
+                    {
+                        ds.New();
+                        IsWrap = false;
+                    }
                 }
             }
 
@@ -114,10 +120,11 @@ namespace YoungHero
         private async void button3_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
+            StringBuilder sb = new StringBuilder();
+
             sfd.Filter = "Txt File|*.txt";
             sfd.InitialDirectory = Properties.Settings.Default.dataPathName;
             sfd.ShowDialog();
-            StringBuilder sb = new StringBuilder();
 
             if (string.IsNullOrEmpty(sfd.FileName))
             {
