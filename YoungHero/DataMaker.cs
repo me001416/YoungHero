@@ -94,6 +94,11 @@ namespace YoungHero
                 {
                     sb.Append(y);
                     sb.Append(";");
+
+                    if(sb.Length > 0x100)
+                    {
+                        return;
+                    }
                 });
             });
 
