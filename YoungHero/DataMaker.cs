@@ -59,8 +59,8 @@ namespace YoungHero
 
         private void FormatDataFile(string SrcStr)
         {
-            DataStringList ds = new DataStringList();
-            string stringBox = string.Empty;
+            DataStringBuilderList ds = new DataStringBuilderList();
+            StringBuilder sb = new StringBuilder();
             string sep1 = "\n";
             string sep2 = "\t";
 
@@ -76,34 +76,29 @@ namespace YoungHero
 
                 if (str == sep2)
                 {
-                    ds.Add(stringBox);
-                    stringBox = string.Empty;
+                    ds.Add(sb);
+                    sb = new StringBuilder();
                     continue;
                 }
-                
-                string.Concat(stringBox, str);
+
+                sb.Append(str);
             }
 
             //MessageBox.Show(stringBox, "FormatDataFile");
 
-            stringBox = string.Empty;
+            sb = new StringBuilder();
 
             ds.dsList.ForEach(x =>
             {
                 x.SbList.ForEach(y =>
                 {
-                    string.Concat(stringBox, y);
-                    string.Concat(stringBox, ",");
+                    sb.Append(y);
+                    sb.Append(";");
                 });
-                //string.Concat(stringBox, x.SbList[1]);
-                //string.Concat(stringBox, ",");
             });
 
-            //sb.Append(ds.dsList[3].SbList[1]);
-            //sb.Append(ds.dsList[3].SbList[2]);
-
-            MessageBox.Show(stringBox, "FormatDataFile");
-            sStr = stringBox;
+            MessageBox.Show(sb.ToString(), "FormatDataFile");
+            sStr = sb.ToString();
 
             return;
         }
