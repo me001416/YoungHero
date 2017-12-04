@@ -71,14 +71,18 @@ namespace YoungHero
                 if (str == sep1)
                 {
                     IsFirstLine = false;
+                    sb.Append(",");
                     ds.New();
                     continue;
                 }
 
                 if (str == sep2)
-                {                    
-                    ds.Add(sb);
-                    sb = new StringBuilder();
+                {
+                    if (!IsFirstLine)
+                    {
+                        ds.Add(sb);
+                        sb = new StringBuilder();
+                    }
                     continue;
                 }
 
@@ -97,7 +101,7 @@ namespace YoungHero
                 foreach(var y in x.SbList)
                 {
                     sb.Append(y);
-                    sb.Append(";");
+                    sb.Append(@"""");
                 }
             }
 
