@@ -86,18 +86,15 @@ namespace YoungHero
 
                     ds.Add(sb);
                     sb = new StringBuilder();
+
+                    ds.New();
+
+                    continue;
                 }
 
                 if (!IsFirstLine)
                 {
-                    if (IsWrap)
-                    {
-                        ds.New();
-                    }
-                    else
-                    {
-                        sb.Append(str);
-                    }
+                    sb.Append(str);
                 }
             }
 
