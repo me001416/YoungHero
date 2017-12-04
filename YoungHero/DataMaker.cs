@@ -52,18 +52,17 @@ namespace YoungHero
         {
             StreamReader SR = new StreamReader(this.FileName, System.Text.Encoding.Default);
             string FileStr = SR.ReadToEnd();
-            FormatDataFile(FileStr);
+            FilterFileData(FileStr);
             SR.Close();
         }
 
-        private void FormatDataFile(string SrcStr)
+        private void FilterFileData(string SrcStr)
         {
             DataStringBuilderList ds = new DataStringBuilderList();
             StringBuilder sb = new StringBuilder();
             string sep1 = "\n";
             string sep2 = "\t";
             bool IsFirstLine = true;
-            bool IsWrap = false;
 
             for (var i = 0; i < SrcStr.Length; i++)
             {
@@ -72,8 +71,8 @@ namespace YoungHero
                 if (str == sep1)
                 {
                     IsFirstLine = false;
-                    IsWrap = true;
-                    str = @"{""";
+                    ds.New();
+                    continue;
                 }
 
                 if (str == sep2)
@@ -89,16 +88,9 @@ namespace YoungHero
                 if (!IsFirstLine)
                 {
                     sb.Append(str);
-
-                    if(IsWrap)
-                    {
-                        ds.New();
-                        IsWrap = false;
-                    }
                 }
             }
 
-            //MessageBox.Show(stringBox, "FormatDataFile");
 
             sb = new StringBuilder();
 
@@ -107,14 +99,17 @@ namespace YoungHero
                 foreach(var y in x.SbList)
                 {
                     sb.Append(y);
-                    sb.Append(@""",""");
                 }
             }
 
-            //MessageBox.Show(sb.ToString(), "FormatDataFile");
             sStr = sb.ToString();
 
             return;
+        }
+
+        private void FormatFileData(string SrcStr)
+        {
+
         }
 
         private async void button3_Click(object sender, EventArgs e)
@@ -148,7 +143,6 @@ namespace YoungHero
             StreamWriter sw = new StreamWriter(sfd.FileName);
 
             await sw.WriteAsync(sStr);
-            //await sw.WriteAsync(sb.ToString());
             sw.Close();
 
             MessageBox.Show("存檔完成", "存檔");
