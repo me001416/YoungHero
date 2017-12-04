@@ -73,7 +73,7 @@ namespace YoungHero
                 {
                     IsFirstLine = false;
                     IsWrap = true;
-                    str = ",";
+                    str = @"{""";
                 }
 
                 if (str == sep2)
@@ -107,7 +107,7 @@ namespace YoungHero
                 foreach(var y in x.SbList)
                 {
                     sb.Append(y);
-                    sb.Append(@"""");
+                    sb.Append(@""",""");
                 }
             }
 
@@ -121,20 +121,23 @@ namespace YoungHero
         {
             SaveFileDialog sfd = new SaveFileDialog();
             StringBuilder sb = new StringBuilder();
-            string FastPathName = Application.StartupPath + @"\Data\NeigongData.txt";
 
-            if (!File.Exists(FastPathName))
+            sfd.Filter = "Txt File|*.txt";
+
+            if (Directory.Exists(Application.StartupPath + @"\Data"))
             {
-                sfd.Filter = "Txt File|*.txt";
+                sfd.InitialDirectory = Application.StartupPath + @"\Data";
+            }
+            else
+            {
                 sfd.InitialDirectory = Properties.Settings.Default.dataPathName;
-                sfd.ShowDialog();
+            }
 
-                if (string.IsNullOrEmpty(sfd.FileName))
-                {
-                    return;
-                }
+            sfd.ShowDialog();
 
-                FastPathName = sfd.FileName;
+            if (string.IsNullOrEmpty(sfd.FileName))
+            {
+                return;
             }
 
             if (string.IsNullOrEmpty(sStr))
@@ -142,7 +145,7 @@ namespace YoungHero
                 return;
             }
 
-            StreamWriter sw = new StreamWriter(FastPathName);
+            StreamWriter sw = new StreamWriter(sfd.FileName);
 
             await sw.WriteAsync(sStr);
             //await sw.WriteAsync(sb.ToString());
