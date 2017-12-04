@@ -62,6 +62,7 @@ namespace YoungHero
             StringBuilder sb = new StringBuilder();
             string sep1 = "\n";
             string sep2 = "\t";
+            string sep3 = "\r";
             bool IsFirstLine = true;
 
             for (var i = 0; i < SrcStr.Length; i++)
@@ -87,6 +88,11 @@ namespace YoungHero
 
                     ds.New();
 
+                    continue;
+                }
+
+                if(str == sep3)
+                {
                     continue;
                 }
 

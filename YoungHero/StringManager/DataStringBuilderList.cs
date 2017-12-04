@@ -44,22 +44,42 @@ namespace YoungHero.StringManager
         {
             StringBuilder sb = new StringBuilder();
 
+            sb.Append(@"""NeigongList"":[");
+
             foreach (var x in dsList)
             {
                 for(var i = 0; i < x.SbList.Count; i++)
                 {
-                    switch (i)
+                    if(x.SbList.Count < 2)
                     {
-                        case 0:
-                            sb.Append(@"{""id"":""");
-                            sb.Append(x.SbList[i]);
-                            sb.Append(@""",");
-                            break;
-                        default:
-                            break;
+                        continue;
+                    }
+
+                    if(i == 0)
+                    {
+                        sb.Append(@"{""id"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == x.SbList.Count-1)
+                    {
+                        sb.Append(@"""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@"""}");
+
+                        ///
+                        /// 分行，方便驗證結果
+                        ///
+                        sb.Append("\n");
+                    }
+                    else
+                    {
+                        sb.Append(x.SbList[i]);
                     }
                 }
             }
+
+            sb.Append("]");
 
             return sb.ToString();
         }
