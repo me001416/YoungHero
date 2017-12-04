@@ -88,19 +88,19 @@ namespace YoungHero
 
             sb = new StringBuilder();
 
-            ds.dsList.ForEach(x =>
+            foreach(var x in ds.dsList)
             {
-                x.SbList.ForEach(y =>
+                foreach(var y in x.SbList)
                 {
                     sb.Append(y);
                     sb.Append(";");
 
-                    if(sb.Length > 0x100)
+                    if (sb.Length > 0x100)
                     {
-                        return;
+                        break;
                     }
-                });
-            });
+                }
+            }
 
             MessageBox.Show(sb.ToString(), "FormatDataFile");
             sStr = sb.ToString();
