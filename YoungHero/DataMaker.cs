@@ -121,22 +121,28 @@ namespace YoungHero
         {
             SaveFileDialog sfd = new SaveFileDialog();
             StringBuilder sb = new StringBuilder();
+            string FastPathName = Application.StartupPath + @"\Data\NeigongData.txt";
 
-            sfd.Filter = "Txt File|*.txt";
-            sfd.InitialDirectory = Properties.Settings.Default.dataPathName;
-            sfd.ShowDialog();
+            if (!File.Exists(FastPathName))
+            {
+                sfd.Filter = "Txt File|*.txt";
+                sfd.InitialDirectory = Properties.Settings.Default.dataPathName;
+                sfd.ShowDialog();
 
-            if (string.IsNullOrEmpty(sfd.FileName))
+                if (string.IsNullOrEmpty(sfd.FileName))
+                {
+                    return;
+                }
+
+                FastPathName = sfd.FileName;
+            }
+
+            if (string.IsNullOrEmpty(sStr))
             {
                 return;
             }
 
-            if(string.IsNullOrEmpty(sStr))
-            {
-                return;
-            }
-
-            StreamWriter sw = new StreamWriter(sfd.FileName);
+            StreamWriter sw = new StreamWriter(FastPathName);
 
             await sw.WriteAsync(sStr);
             //await sw.WriteAsync(sb.ToString());
