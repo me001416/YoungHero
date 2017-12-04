@@ -63,7 +63,6 @@ namespace YoungHero
             string sep1 = "\n";
             string sep2 = "\t";
             bool IsFirstLine = true;
-            bool IsWrap = false;
 
             for (var i = 0; i < SrcStr.Length; i++)
             {
@@ -82,7 +81,6 @@ namespace YoungHero
                 if (str == sep1)
                 {
                     IsFirstLine = false;
-                    IsWrap = true;
 
                     ds.Add(sb);
                     sb = new StringBuilder();

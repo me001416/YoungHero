@@ -46,11 +46,18 @@ namespace YoungHero.StringManager
 
             foreach (var x in dsList)
             {
-                sb.Append("(MarkHsu)\n");
-
-                foreach (var y in x.SbList)
+                for(var i = 0; i < x.SbList.Count; i++)
                 {
-                    sb.Append(y);
+                    switch (i)
+                    {
+                        case 0:
+                            sb.Append(@"{""id"":""");
+                            sb.Append(x.SbList[i]);
+                            sb.Append(@""",");
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
 
