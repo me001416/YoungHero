@@ -46,6 +46,11 @@ namespace YoungHero.StringManager
 
             sb.Append(@"""NeigongList"":[");
 
+            ///
+            /// 分行，方便驗證結果
+            ///
+            sb.Append("\n");
+
             foreach (var x in dsList)
             {
                 for(var i = 0; i < x.SbList.Count; i++)
@@ -58,6 +63,95 @@ namespace YoungHero.StringManager
                     if(i == 0)
                     {
                         sb.Append(@"{""id"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 1)
+                    {
+                        sb.Append(@"""Name"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 2)
+                    {
+                        sb.Append(@"""Desc"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 3)
+                    {
+                        sb.Append(@"""UpgradeNotes"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 4)
+                    {
+                        sb.Append(@"""LevelUP"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 5)
+                    {
+                        sb.Append(@"""MaxUP"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 6)
+                    {
+                        sb.Append(@"""iExp"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 7)
+                    {
+                        sb.Append(@"""sIcon1"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 8)
+                    {
+                        sb.Append(@"""ConditionEffectID1"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 9)
+                    {
+                        sb.Append(@"""sConditionsID1"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 10)
+                    {
+                        sb.Append(@"""ConditionEffectID2"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 11)
+                    {
+                        sb.Append(@"""sConditionsID2"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if (i == 12)
+                    {
+                        sb.Append(@"""ConditionEffectID3"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@""",");
+                    }
+                    else if ((x.SbList.Count == 14) && (i == 13))
+                    {
+                        sb.Append(@"""sConditionsID3"":""");
+                        sb.Append(x.SbList[i]);
+                        sb.Append(@"""}");
+
+                        ///
+                        /// 分行，方便驗證結果
+                        ///
+                        sb.Append("\n");
+                    }
+                    else if (i == 13)
+                    {
+                        sb.Append(@"""sConditionsID3"":""");
                         sb.Append(x.SbList[i]);
                         sb.Append(@""",");
                     }
