@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +16,14 @@ namespace YoungHero
         public DataMaker()
         {
             InitializeComponent();
+            Initial();
         }
 
         private void Initial()
         {
-            
+            SelectModeComboBox.Items.Add("Neigong");
+            SelectModeComboBox.Items.Add("NPC");
+            SelectModeComboBox.Items.Add("Item");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +71,7 @@ namespace YoungHero
             string sep2 = "\t";
             string sep3 = "\r";
             bool IsFirstLine = true;
+            byte SelectMode = 0;
 
             for (var i = 0; i < SrcStr.Length; i++)
             {
@@ -107,7 +110,23 @@ namespace YoungHero
                 }
             }
 
-            sStr = ds.FormatFileData();
+            switch (SelectModeComboBox.SelectedItem.ToString())
+            {
+                case "Neigong":
+                    SelectMode = 1;
+                    break;
+                case "NPC":
+                    SelectMode = 2;
+                    break;
+                case "Item":
+                    SelectMode = 3;
+                    break;
+                default:
+                    MessageBox.Show("請選擇使用模式", "Error");                    
+                    return;
+            }
+
+            sStr = ds.FormatFileData(SelectMode);
 
             return;
         }
