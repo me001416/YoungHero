@@ -42,6 +42,18 @@ namespace YoungHero.StringManager
 
         public string FormatFileData(int SelectMode = 1)
         {
+            string str = string.Empty;
+
+            if(SelectMode == 1)
+            {
+                str = Neigong();
+            }
+
+            return str;
+        }
+
+        private string Neigong()
+        {
             StringBuilder sb = new StringBuilder();
 
             sb.Append(@"""NeigongList"":[");
@@ -53,14 +65,14 @@ namespace YoungHero.StringManager
 
             foreach (var x in dsList)
             {
-                for(var i = 0; i < x.SbList.Count; i++)
+                for (var i = 0; i < x.SbList.Count; i++)
                 {
-                    if(x.SbList.Count < 2)
+                    if (x.SbList.Count < 2)
                     {
                         continue;
                     }
 
-                    if(i == 0)
+                    if (i == 0)
                     {
                         sb.Append(@"{""id"":""");
                         sb.Append(x.SbList[i]);
@@ -155,7 +167,7 @@ namespace YoungHero.StringManager
                         sb.Append(x.SbList[i]);
                         sb.Append(@""",");
                     }
-                    else if (i == x.SbList.Count-1)
+                    else if (i == x.SbList.Count - 1)
                     {
                         sb.Append(@"""");
                         sb.Append(x.SbList[i]);
