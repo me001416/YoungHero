@@ -144,32 +144,9 @@ namespace YoungHero.StringManager
                         sb.Append(x.SbList[i]);
                         sb.Append(@""",");
                     }
-                    else if (i == 12)
-                    {
-                        sb.Append(@"""後日談ID"":""");
-                        sb.Append(x.SbList[i]);
-                        sb.Append(@""",");
-                    }
-                    else if ((x.SbList.Count == 14) && (i == 13))
-                    {
-                        sb.Append(@"""sConditionsID3"":""");
-                        sb.Append(x.SbList[i]);
-                        sb.Append(@"""}");
-
-                        ///
-                        /// 分行，方便驗證結果
-                        ///
-                        sb.Append("\n");
-                    }
-                    else if (i == 13)
-                    {
-                        sb.Append(@"""sConditionsID3"":""");
-                        sb.Append(x.SbList[i]);
-                        sb.Append(@""",");
-                    }
                     else if (i == x.SbList.Count - 1)
                     {
-                        sb.Append(@"""");
+                        sb.Append(@"""AfterStoryID"":""");
                         sb.Append(x.SbList[i]);
                         sb.Append(@"""}");
 
@@ -307,7 +284,7 @@ namespace YoungHero.StringManager
                     }
                     else if (i == x.SbList.Count - 1)
                     {
-                        sb.Append(@"""");
+                        sb.Append(@"""FinalCondition"":""");
                         sb.Append(x.SbList[i]);
                         sb.Append(@"""}");
 
