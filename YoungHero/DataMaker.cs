@@ -12,7 +12,7 @@ namespace YoungHero
     {
         string FileName;
         string sStr;
-        string SelectModeStr;
+        byte SelectMode;
 
         public DataMaker()
         {
@@ -48,12 +48,30 @@ namespace YoungHero
 
         private async void button2_Click(object sender, EventArgs e)
         {
+            string SelectModeStr;
+
             if (string.IsNullOrEmpty(this.FileName))
             {
                 return;
             }
 
             SelectModeStr = SelectModeComboBox.SelectedItem.ToString();
+
+            switch (SelectModeStr)
+            {
+                case "Neigong":
+                    SelectMode = 1;
+                    break;
+                case "NPC":
+                    SelectMode = 2;
+                    break;
+                case "Item":
+                    SelectMode = 3;
+                    break;
+                default:
+                    MessageBox.Show("請選擇使用模式", "Error");
+                    return;
+            }
 
             await Task.Run(() => this.FileLoad());
         }
@@ -74,7 +92,6 @@ namespace YoungHero
             string sep2 = "\t";
             string sep3 = "\r";
             bool IsFirstLine = true;
-            byte SelectMode = 0;
 
             for (var i = 0; i < SrcStr.Length; i++)
             {
@@ -111,22 +128,6 @@ namespace YoungHero
                 {
                     sb.Append(str);
                 }
-            }
-
-            switch (SelectModeStr)
-            {
-                case "Neigong":
-                    SelectMode = 1;
-                    break;
-                case "NPC":
-                    SelectMode = 2;
-                    break;
-                case "Item":
-                    SelectMode = 3;
-                    break;
-                default:
-                    MessageBox.Show("請選擇使用模式", "Error");                    
-                    return;
             }
 
             sStr = ds.FormatFileData(SelectMode);
