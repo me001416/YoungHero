@@ -12,6 +12,7 @@ namespace YoungHero
     {
         string FileName;
         string sStr;
+        string SelectModeStr;
 
         public DataMaker()
         {
@@ -51,6 +52,8 @@ namespace YoungHero
             {
                 return;
             }
+
+            SelectModeStr = SelectModeComboBox.SelectedItem.ToString();
 
             await Task.Run(() => this.FileLoad());
         }
@@ -110,7 +113,7 @@ namespace YoungHero
                 }
             }
 
-            switch (SelectModeComboBox.SelectedItem.ToString())
+            switch (SelectModeStr)
             {
                 case "Neigong":
                     SelectMode = 1;

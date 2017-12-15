@@ -48,6 +48,10 @@ namespace YoungHero.StringManager
             {
                 str = Neigong();
             }
+            else if(SelectMode == 2)
+            {
+                str = NPC();
+            }
 
             return str;
         }
