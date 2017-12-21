@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,6 @@ namespace YoungHero
 {
     public class NpcData
     {
-        private bool updated;
-
         private int npcId;
         public int NpcId
         {
@@ -439,9 +438,9 @@ namespace YoungHero
             {
                 npcList.ForEach(y =>
                 {
-                    if(x.NpcName == y.NpcName)
+                    if (x.NpcName == y.NpcName)
                     {
-                        if(x.NpcId != y.NpcId)
+                        if (x.NpcId != y.NpcId)
                         {
                             errMsg = errMsg + $"{x.NpcName} 重複，{x.NpcId} != {y.NpcId}\n";
                         }
@@ -452,7 +451,33 @@ namespace YoungHero
             if (!string.IsNullOrEmpty(errMsg))
             {
                 MessageBox.Show(errMsg, "Error");
-            }            
+            }
+        }
+    }
+
+    public class NpcJson
+    {
+        string NpcFN = Application.StartupPath + @"\Data\NpcData.txt";
+
+        public NpcJson()
+        {
+            LoadFile();
+        }
+
+        private void LoadFile_Run()
+        {
+            StreamReader FileSR = new StreamReader(NpcFN, Encoding.ASCII);
+            string FileStr = FileSR.ReadToEnd();
+        }
+
+        private async void LoadFile()
+        {
+            if(!File.Exists(NpcFN))
+            {
+                MessageBox.Show("NpcData.txt 不存在", "Error");
+            }
+
+            await Task.Run(() => LoadFile_Run());
         }
     }
 }
