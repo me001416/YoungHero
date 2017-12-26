@@ -8,7 +8,6 @@ namespace YoungHero
     public partial class ModifySaveFile : Form
     {
         dynamic saveJson;
-        NpcList npcList;
         NpcJson gNpcJson;
         int CurrentNpcID;
 
@@ -26,7 +25,6 @@ namespace YoungHero
 
         private void Initial()
         {
-            npcList = new NpcList();
             gNpcJson = new NpcJson();
             CurrentNpcID = 0;
 
@@ -172,8 +170,6 @@ namespace YoungHero
 
         private void TextBox_Group2_Leave(object sender, EventArgs e)
         {
-            //MessageBox.Show(HpTextBox.Text, "TextBox_Group2_Leave");
-
             int PointNpcId = 0;
 
             if(CurrentNpcID == 0)
