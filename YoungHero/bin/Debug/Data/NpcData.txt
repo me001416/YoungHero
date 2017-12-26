@@ -1,4 +1,4 @@
-"NPCList":[
+{"NPCList":[
 {"id":"100001","s3DModel":"TL_ysky","sMaxImage":"B100001","sAllImage":"100001","sMemberImage":"M100001","sSmallImage":"S100001","iFriendly":"0","sNpcName":"厲蒼天","sIntroduction":"本名厲蒼天，天龍八部之首，天龍教創教者。在許多江湖人心中，天王就是邪惡的化身、武林大魔頭。但很少有人知道天王心中的宏圖偉業，要在遙遠的西方，創建一個沒有紛爭的理想國。","iGenderType":"1","iMartialType":"1","sTitle":"天王","AfterStoryID":"0"},
 {"id":"100002","s3DModel":"TL_sky","sMaxImage":"B100002","sAllImage":"100002","sMemberImage":"M100002","sSmallImage":"S100002","iFriendly":"0","sNpcName":"厲蒼天","sIntroduction":"本名厲蒼天，天龍八部之首，天龍教創教者。在許多江湖人心中，天王就是邪惡的化身、武林大魔頭。但很少有人知道天王心中的宏圖偉業，要在遙遠的西方，創建一個沒有紛爭的理想國。","iGenderType":"1","iMartialType":"1","sTitle":"天王","AfterStoryID":"0"},
 {"id":"100003","s3DModel":"TL_ydragon","sMaxImage":"B100003","sAllImage":"100003","sMemberImage":"M100003","sSmallImage":"S100003","iFriendly":"0","sNpcName":"厲蒼龍","sIntroduction":"本名厲蒼龍，天龍八部之龍，現任天龍教教主。與兄長相比，龍王行事更加霸道乖戾，武功手段更為狠毒。龍王的唯一目標，就是稱霸武林。","iGenderType":"1","iMartialType":"1","sTitle":"龍王","AfterStoryID":"0"},
@@ -690,4 +690,4 @@
 {"id":"700024","s3DModel":"Ghost_ywoman","sMaxImage":"B700024","sAllImage":"700024","sMemberImage":"0","sSmallImage":"S700024","iFriendly":"0","sNpcName":"孟倩思","sIntroduction":"出身江南大族孟家的千金，後與護衛勤王幼子的侍衛聶勝相識相戀，為愛私奔，卻遭錦衣衛追殺，夫離子散。","iGenderType":"0","iMartialType":"","sTitle":"離魂倩女","AfterStoryID":"0"},
 {"id":"700025","s3DModel":"Ghost_yhorse","sMaxImage":"B700025","sAllImage":"700025","sMemberImage":"0","sSmallImage":"S700025","iFriendly":"0","sNpcName":"羅煞","sIntroduction":"神槍會幫主，為人衝動好戰，直爽豪邁，因不屑朝廷各種陰謀算計的手段和枉顧百姓的態度，辭官為寇，在江南一處山頭立神槍會，專以官府薪餉、各地匪賊為目標，燒山放火，打家劫舍。","iGenderType":"1","iMartialType":"","sTitle":"神槍無敵","AfterStoryID":"0"},
 {"id":"700027","s3DModel":"Ghost_ydragon","sMaxImage":"B700027","sAllImage":"700027","sMemberImage":"0","sSmallImage":"S700027","iFriendly":"0","sNpcName":"敖廣","sIntroduction":"東海龍宮幫主。為人有商業頭腦，雖為海盜，但船隊多以貿易、收受沿海百姓供養為生，並不胡亂劫掠；看不下去倭寇持續侵擾沿海居民，糾眾反擊，保得沿海漁民一時安寧，在東南沿海有著高人望。","iGenderType":"1","iMartialType":"","sTitle":"海龍王","AfterStoryID":"0"},
-]
+]}

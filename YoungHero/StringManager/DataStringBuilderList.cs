@@ -60,7 +60,7 @@ namespace YoungHero.StringManager
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append(@"""NPCList"":[");
+            sb.Append(@"{""NPCList"":[");
 
             ///
             /// 分行，方便驗證結果
@@ -166,7 +166,7 @@ namespace YoungHero.StringManager
                 }
             }
 
-            sb.Append("]");
+            sb.Append("]}");
 
             return sb.ToString();
         }
