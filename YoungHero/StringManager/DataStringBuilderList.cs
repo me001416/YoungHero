@@ -166,6 +166,7 @@ namespace YoungHero.StringManager
                 }
             }
 
+            sb.Remove(sb.Length - 2, 1);
             sb.Append("]}");
 
             return sb.ToString();
