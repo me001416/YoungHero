@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace YoungHero
 {
@@ -458,16 +459,38 @@ namespace YoungHero
     public class NpcJson
     {
         string NpcFN = Application.StartupPath + @"\Data\NpcData.txt";
+        dynamic NFJson;
+        bool JsonDone;
 
         public NpcJson()
         {
+            JsonDone = false;
             LoadFile();
+        }
+
+        public bool CheckJsonDone()
+        {
+            for(int i = 0; i < 0xFFF; i++)
+            {
+                if(JsonDone)
+                {
+                    return true;
+                }
+
+                Task.Delay(100);
+            }
+
+            return false;
         }
 
         private void LoadFile_Run()
         {
             StreamReader FileSR = new StreamReader(NpcFN, Encoding.ASCII);
             string FileStr = FileSR.ReadToEnd();
+            NFJson = JsonConvert.DeserializeObject(FileStr);
+            FileSR.Close();
+
+            JsonDone = true;
         }
 
         private async void LoadFile()
@@ -475,6 +498,7 @@ namespace YoungHero
             if(!File.Exists(NpcFN))
             {
                 MessageBox.Show("NpcData.txt 不存在", "Error");
+                return;
             }
 
             await Task.Run(() => LoadFile_Run());
