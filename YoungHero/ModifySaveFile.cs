@@ -9,6 +9,7 @@ namespace YoungHero
     {
         dynamic saveJson;
         NpcList npcList;
+        NpcJson gNpcJson;
         int CurrentNpcID;
 
         public ModifySaveFile()
@@ -20,12 +21,13 @@ namespace YoungHero
         {            
             InitializeComponent();
             this.saveJson = saveJson;
-            this.Initial();
+            Initial();
         }
 
         private void Initial()
         {
             npcList = new NpcList();
+            gNpcJson = new NpcJson();
             CurrentNpcID = 0;
 
             this.MoneyTextBox.Text = saveJson.m_iMoney;
@@ -60,6 +62,11 @@ namespace YoungHero
 
         private void InitNpcListBox(int SrcId)
         {
+            if(!gNpcJson.CheckJsonDone())
+            {
+                MessageBox.Show("JsonDone was false", "Warning");
+            }
+
             if (npcList.IsPresent(SrcId))
             {
                 NpcListBox.Items.Add($"{npcList.ReturnName(SrcId)}");

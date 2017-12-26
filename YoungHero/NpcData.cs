@@ -468,6 +468,19 @@ namespace YoungHero
             LoadFile();
         }
 
+        public bool IsPresent(int SrcID)
+        {
+            foreach (dynamic npc in NFJson.m_NpcList)
+            {
+                if (npc.id == SrcID)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public bool CheckJsonDone()
         {
             for(int i = 0; i < 0xFFF; i++)
