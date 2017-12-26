@@ -176,7 +176,7 @@ namespace YoungHero.StringManager
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append(@"""NeigongList"":[");
+            sb.Append(@"{""NeigongList"":[");
 
             ///
             /// 分行，方便驗證結果
@@ -305,7 +305,8 @@ namespace YoungHero.StringManager
                 }
             }
 
-            sb.Append("]");
+            sb.Remove(sb.Length - 2, 1);
+            sb.Append("]}");
 
             return sb.ToString();
         }
