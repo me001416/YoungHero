@@ -10,35 +10,6 @@ using System.Globalization;
 
 namespace YoungHero
 {
-    public class NpcData
-    {
-        private int npcId;
-        public int NpcId
-        {
-            get { return npcId; }
-            set
-            {
-                npcId = value;
-            }
-        }
-
-        private string npcName;
-        public string NpcName
-        {
-            get { return npcName; }
-            set
-            {
-                npcName = value;
-            }
-        }
-
-        public NpcData(int srcId, string srcName)
-        {
-            NpcId = srcId;
-            NpcName = srcName;
-        }
-    }
-
     public class NpcJson
     {
         string NpcFN = Application.StartupPath + @"\Data\NpcData.txt";
