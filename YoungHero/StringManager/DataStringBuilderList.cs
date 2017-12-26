@@ -152,7 +152,7 @@ namespace YoungHero.StringManager
                     {
                         sb.Append(@"""AfterStoryID"":""");
                         sb.Append(x.SbList[i]);
-                        sb.Append(@"""}");
+                        sb.Append(@"""},");
 
                         ///
                         /// 分行，方便驗證結果
@@ -273,7 +273,7 @@ namespace YoungHero.StringManager
                     {
                         sb.Append(@"""sConditionsID3"":""");
                         sb.Append(x.SbList[i]);
-                        sb.Append(@"""}");
+                        sb.Append(@"""},");
 
                         ///
                         /// 分行，方便驗證結果
@@ -290,7 +290,7 @@ namespace YoungHero.StringManager
                     {
                         sb.Append(@"""FinalCondition"":""");
                         sb.Append(x.SbList[i]);
-                        sb.Append(@"""}");
+                        sb.Append(@"""},");
 
                         ///
                         /// 分行，方便驗證結果
