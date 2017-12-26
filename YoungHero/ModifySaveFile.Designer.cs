@@ -67,11 +67,11 @@
             this.HpTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DefendDodgeTextBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.DefendCounterTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.DefendCriTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.s.SuspendLayout();
@@ -147,11 +147,11 @@
             // 
             // s
             // 
-            this.s.Controls.Add(this.textBox1);
+            this.s.Controls.Add(this.DefendDodgeTextBox);
             this.s.Controls.Add(this.label16);
-            this.s.Controls.Add(this.textBox2);
+            this.s.Controls.Add(this.DefendCounterTextBox);
             this.s.Controls.Add(this.label17);
-            this.s.Controls.Add(this.textBox3);
+            this.s.Controls.Add(this.DefendCriTextBox);
             this.s.Controls.Add(this.label18);
             this.s.Controls.Add(this.DodgeTextBox);
             this.s.Controls.Add(this.label15);
@@ -197,6 +197,8 @@
             this.DodgeTextBox.Name = "DodgeTextBox";
             this.DodgeTextBox.Size = new System.Drawing.Size(100, 22);
             this.DodgeTextBox.TabIndex = 35;
+            this.DodgeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.DodgeTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label15
             // 
@@ -214,6 +216,8 @@
             this.CounterTextBox.Name = "CounterTextBox";
             this.CounterTextBox.Size = new System.Drawing.Size(100, 22);
             this.CounterTextBox.TabIndex = 33;
+            this.CounterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.CounterTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label14
             // 
@@ -231,6 +235,8 @@
             this.MoveTextBox.Name = "MoveTextBox";
             this.MoveTextBox.Size = new System.Drawing.Size(100, 22);
             this.MoveTextBox.TabIndex = 31;
+            this.MoveTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.MoveTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label13
             // 
@@ -248,6 +254,8 @@
             this.CriTextBox.Name = "CriTextBox";
             this.CriTextBox.Size = new System.Drawing.Size(100, 22);
             this.CriTextBox.TabIndex = 29;
+            this.CriTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.CriTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label12
             // 
@@ -266,6 +274,7 @@
             this.MaxDexTextBox.Size = new System.Drawing.Size(100, 22);
             this.MaxDexTextBox.TabIndex = 27;
             this.MaxDexTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.MaxDexTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label8
             // 
@@ -284,6 +293,7 @@
             this.MaxIntTextBox.Size = new System.Drawing.Size(100, 22);
             this.MaxIntTextBox.TabIndex = 25;
             this.MaxIntTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.MaxIntTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label9
             // 
@@ -302,6 +312,7 @@
             this.MaxConTextBox.Size = new System.Drawing.Size(100, 22);
             this.MaxConTextBox.TabIndex = 23;
             this.MaxConTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.MaxConTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label10
             // 
@@ -320,6 +331,7 @@
             this.MaxStrTextBox.Size = new System.Drawing.Size(100, 22);
             this.MaxStrTextBox.TabIndex = 21;
             this.MaxStrTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.MaxStrTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label11
             // 
@@ -338,6 +350,7 @@
             this.DexTextBox.Size = new System.Drawing.Size(100, 22);
             this.DexTextBox.TabIndex = 19;
             this.DexTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.DexTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label6
             // 
@@ -356,6 +369,7 @@
             this.IntTextBox.Size = new System.Drawing.Size(100, 22);
             this.IntTextBox.TabIndex = 17;
             this.IntTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.IntTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label7
             // 
@@ -374,6 +388,7 @@
             this.ConTextBox.Size = new System.Drawing.Size(100, 22);
             this.ConTextBox.TabIndex = 15;
             this.ConTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.ConTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label4
             // 
@@ -392,6 +407,7 @@
             this.StrTextBox.Size = new System.Drawing.Size(100, 22);
             this.StrTextBox.TabIndex = 13;
             this.StrTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.StrTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label5
             // 
@@ -410,6 +426,7 @@
             this.SpTextBox.Size = new System.Drawing.Size(100, 22);
             this.SpTextBox.TabIndex = 11;
             this.SpTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.SpTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // checkBox1
             // 
@@ -473,12 +490,14 @@
             this.ItemTabPage.Text = "ITEM";
             this.ItemTabPage.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // DefendDodgeTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(250, 271);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 41;
+            this.DefendDodgeTextBox.Location = new System.Drawing.Point(250, 271);
+            this.DefendDodgeTextBox.Name = "DefendDodgeTextBox";
+            this.DefendDodgeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DefendDodgeTextBox.TabIndex = 41;
+            this.DefendDodgeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.DefendDodgeTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label16
             // 
@@ -490,12 +509,14 @@
             this.label16.TabIndex = 40;
             this.label16.Text = "閃避";
             // 
-            // textBox2
+            // DefendCounterTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(250, 243);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 39;
+            this.DefendCounterTextBox.Location = new System.Drawing.Point(250, 243);
+            this.DefendCounterTextBox.Name = "DefendCounterTextBox";
+            this.DefendCounterTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DefendCounterTextBox.TabIndex = 39;
+            this.DefendCounterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.DefendCounterTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label17
             // 
@@ -507,12 +528,14 @@
             this.label17.TabIndex = 38;
             this.label17.Text = "抗反";
             // 
-            // textBox3
+            // DefendCriTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(250, 215);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 37;
+            this.DefendCriTextBox.Location = new System.Drawing.Point(250, 215);
+            this.DefendCriTextBox.Name = "DefendCriTextBox";
+            this.DefendCriTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DefendCriTextBox.TabIndex = 37;
+            this.DefendCriTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.DefendCriTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
             // 
             // label18
             // 
@@ -586,11 +609,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox MoveTextBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DefendDodgeTextBox;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox DefendCounterTextBox;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox DefendCriTextBox;
         private System.Windows.Forms.Label label18;
     }
 }

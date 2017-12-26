@@ -155,6 +155,9 @@ namespace YoungHero
                     CriTextBox.Text = npc.iCri;
                     CounterTextBox.Text = npc.iCounter;
                     DodgeTextBox.Text = npc.iDodge;
+                    DefendCriTextBox.Text = npc.iDefendCri;
+                    DefendCounterTextBox.Text = npc.iDefendCounter;
+                    DefendDodgeTextBox.Text = npc.iDefendDodge;
 
 
                     CurrentNpcID = IdResult;
