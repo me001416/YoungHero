@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace YoungHero
 {
@@ -470,7 +471,7 @@ namespace YoungHero
 
         public bool IsPresent(int SrcID)
         {
-            foreach (dynamic npc in NFJson.m_NpcList)
+            foreach (dynamic npc in NFJson.NPCList)
             {
                 if (npc.id == SrcID)
                 {
@@ -479,6 +480,56 @@ namespace YoungHero
             }
 
             return false;
+        }
+
+        public string ReturnName(int SrcID)
+        {
+            string str = string.Empty;
+
+            foreach (dynamic npc in NFJson.NPCList)
+            {
+                if (npc.id == SrcID)
+                {
+                    str = npc.id + "\t" + npc.sNpcName;
+                }
+            }
+
+            return str;
+        }
+
+        private string IdFilter(string SrcName)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (var i = 0; i < SrcName.Length; i++)
+            {
+                string TempStr = StringInfo.GetNextTextElement(SrcName, i);
+
+                if (TempStr == "\t")
+                {
+                    break;
+                }
+
+                sb.Append(TempStr);
+            }
+
+            return sb.ToString();
+        }
+
+        public int ReturnId(string SrcName)
+        {
+            int result = 0;
+            string str = IdFilter(SrcName);
+
+            foreach (dynamic npc in NFJson.NPCList)
+            {
+                if (npc.id == str)
+                {
+                    result = npc.id.ToObject<Int32>();
+                }
+            }
+
+            return result;
         }
 
         public bool CheckJsonDone()
@@ -498,7 +549,7 @@ namespace YoungHero
 
         private void LoadFile_Run()
         {
-            StreamReader FileSR = new StreamReader(NpcFN, Encoding.ASCII);
+            StreamReader FileSR = new StreamReader(NpcFN, System.Text.Encoding.Default);
             string FileStr = FileSR.ReadToEnd();
             NFJson = JsonConvert.DeserializeObject(FileStr);
             FileSR.Close();

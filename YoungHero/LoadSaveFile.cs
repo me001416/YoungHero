@@ -39,7 +39,7 @@ namespace YoungHero
 
         private void SaveLoad()
         {
-            StreamReader saveSR = new StreamReader(this.saveFileName, Encoding.ASCII);
+            StreamReader saveSR = new StreamReader(this.saveFileName, System.Text.Encoding.Default);
             string saveStr = saveSR.ReadToEnd();
             saveJson = JsonConvert.DeserializeObject(saveStr);
             saveSR.Close();

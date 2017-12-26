@@ -67,9 +67,9 @@ namespace YoungHero
                 MessageBox.Show("JsonDone was false", "Warning");
             }
 
-            if (npcList.IsPresent(SrcId))
+            if (gNpcJson.IsPresent(SrcId))
             {
-                NpcListBox.Items.Add($"{npcList.ReturnName(SrcId)}");
+                NpcListBox.Items.Add($"{gNpcJson.ReturnName(SrcId)}");
             }
             else
             {
@@ -120,7 +120,7 @@ namespace YoungHero
         private void NpcListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectNpc = NpcListBox.SelectedItem.ToString();
-            int IdResult = npcList.ReturnId(selectNpc);
+            int IdResult = gNpcJson.ReturnId(selectNpc);
 
             if(IdResult == 0)
             {

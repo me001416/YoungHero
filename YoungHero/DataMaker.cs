@@ -170,7 +170,7 @@ namespace YoungHero
                 return;
             }
 
-            StreamWriter sw = new StreamWriter(sfd.FileName);
+            StreamWriter sw = new StreamWriter(sfd.FileName, false, System.Text.Encoding.Default);
 
             await sw.WriteAsync(sStr);
             sw.Close();
