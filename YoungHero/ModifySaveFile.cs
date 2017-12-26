@@ -140,6 +140,7 @@ namespace YoungHero
                 {
                     HpTextBox.Text = npc.iMaxHp;
                     SpTextBox.Text = npc.iMaxSp;
+
                     StrTextBox.Text = npc.iStr;
                     ConTextBox.Text = npc.iCon;
                     IntTextBox.Text = npc.iInt;
@@ -148,6 +149,13 @@ namespace YoungHero
                     MaxConTextBox.Text = npc.iMaxCon;
                     MaxIntTextBox.Text = npc.iMaxInt;
                     MaxDexTextBox.Text = npc.iMaxDex;
+
+                    MoveTextBox.Text = npc.iMoveStep;
+
+                    CriTextBox.Text = npc.iCri;
+                    CounterTextBox.Text = npc.iCounter;
+                    DodgeTextBox.Text = npc.iDodge;
+
 
                     CurrentNpcID = IdResult;
                 }

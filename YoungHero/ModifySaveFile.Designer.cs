@@ -36,6 +36,14 @@
             this.confrimButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.s = new System.Windows.Forms.TabPage();
+            this.DodgeTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.CounterTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.MoveTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.CriTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.MaxDexTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.MaxIntTextBox = new System.Windows.Forms.TextBox();
@@ -59,14 +67,12 @@
             this.HpTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
-            this.label12 = new System.Windows.Forms.Label();
-            this.CriTextBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.MoveTextBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.CounterTextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.DodgeTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.s.SuspendLayout();
             this.SuspendLayout();
@@ -141,6 +147,12 @@
             // 
             // s
             // 
+            this.s.Controls.Add(this.textBox1);
+            this.s.Controls.Add(this.label16);
+            this.s.Controls.Add(this.textBox2);
+            this.s.Controls.Add(this.label17);
+            this.s.Controls.Add(this.textBox3);
+            this.s.Controls.Add(this.label18);
             this.s.Controls.Add(this.DodgeTextBox);
             this.s.Controls.Add(this.label15);
             this.s.Controls.Add(this.CounterTextBox);
@@ -178,6 +190,74 @@
             this.s.TabIndex = 0;
             this.s.Text = "NPC";
             this.s.UseVisualStyleBackColor = true;
+            // 
+            // DodgeTextBox
+            // 
+            this.DodgeTextBox.Location = new System.Drawing.Point(66, 271);
+            this.DodgeTextBox.Name = "DodgeTextBox";
+            this.DodgeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DodgeTextBox.TabIndex = 35;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label15.Location = new System.Drawing.Point(6, 271);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 16);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "閃避";
+            // 
+            // CounterTextBox
+            // 
+            this.CounterTextBox.Location = new System.Drawing.Point(66, 243);
+            this.CounterTextBox.Name = "CounterTextBox";
+            this.CounterTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CounterTextBox.TabIndex = 33;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label14.Location = new System.Drawing.Point(6, 243);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 16);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "反擊";
+            // 
+            // MoveTextBox
+            // 
+            this.MoveTextBox.Location = new System.Drawing.Point(250, 50);
+            this.MoveTextBox.Name = "MoveTextBox";
+            this.MoveTextBox.Size = new System.Drawing.Size(100, 22);
+            this.MoveTextBox.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label13.Location = new System.Drawing.Point(190, 50);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 16);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "移動";
+            // 
+            // CriTextBox
+            // 
+            this.CriTextBox.Location = new System.Drawing.Point(66, 215);
+            this.CriTextBox.Name = "CriTextBox";
+            this.CriTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CriTextBox.TabIndex = 29;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label12.Location = new System.Drawing.Point(6, 215);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 16);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "暴擊";
             // 
             // MaxDexTextBox
             // 
@@ -388,78 +468,61 @@
             this.ItemTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemTabPage.Name = "ItemTabPage";
             this.ItemTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ItemTabPage.Size = new System.Drawing.Size(644, 429);
+            this.ItemTabPage.Size = new System.Drawing.Size(667, 443);
             this.ItemTabPage.TabIndex = 1;
             this.ItemTabPage.Text = "ITEM";
             this.ItemTabPage.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // textBox1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.Location = new System.Drawing.Point(6, 215);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 16);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "暴擊";
+            this.textBox1.Location = new System.Drawing.Point(250, 271);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 41;
             // 
-            // CriTextBox
+            // label16
             // 
-            this.CriTextBox.Location = new System.Drawing.Point(66, 215);
-            this.CriTextBox.Name = "CriTextBox";
-            this.CriTextBox.Size = new System.Drawing.Size(100, 22);
-            this.CriTextBox.TabIndex = 29;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label16.Location = new System.Drawing.Point(190, 271);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 16);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "閃避";
             // 
-            // label13
+            // textBox2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(172, 50);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 16);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "移動";
+            this.textBox2.Location = new System.Drawing.Point(250, 243);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 39;
             // 
-            // MoveTextBox
+            // label17
             // 
-            this.MoveTextBox.Location = new System.Drawing.Point(250, 50);
-            this.MoveTextBox.Name = "MoveTextBox";
-            this.MoveTextBox.Size = new System.Drawing.Size(100, 22);
-            this.MoveTextBox.TabIndex = 31;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label17.Location = new System.Drawing.Point(190, 243);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 16);
+            this.label17.TabIndex = 38;
+            this.label17.Text = "抗反";
             // 
-            // label14
+            // textBox3
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label14.Location = new System.Drawing.Point(6, 243);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 16);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "反擊";
+            this.textBox3.Location = new System.Drawing.Point(250, 215);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 37;
             // 
-            // CounterTextBox
+            // label18
             // 
-            this.CounterTextBox.Location = new System.Drawing.Point(66, 243);
-            this.CounterTextBox.Name = "CounterTextBox";
-            this.CounterTextBox.Size = new System.Drawing.Size(100, 22);
-            this.CounterTextBox.TabIndex = 33;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label15.Location = new System.Drawing.Point(6, 271);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(40, 16);
-            this.label15.TabIndex = 34;
-            this.label15.Text = "閃避";
-            // 
-            // DodgeTextBox
-            // 
-            this.DodgeTextBox.Location = new System.Drawing.Point(66, 271);
-            this.DodgeTextBox.Name = "DodgeTextBox";
-            this.DodgeTextBox.Size = new System.Drawing.Size(100, 22);
-            this.DodgeTextBox.TabIndex = 35;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label18.Location = new System.Drawing.Point(190, 215);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(40, 16);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "抗暴";
             // 
             // ModifySaveFile
             // 
@@ -523,5 +586,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox MoveTextBox;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label18;
     }
 }
