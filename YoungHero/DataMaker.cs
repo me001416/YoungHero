@@ -124,7 +124,7 @@ namespace YoungHero
                     continue;
                 }
 
-                if (!IsFirstLine)
+                if (!IsFirstLine || (i == SrcStr.Length-1))
                 {
                     sb.Append(str);
                 }

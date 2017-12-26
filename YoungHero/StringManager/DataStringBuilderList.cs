@@ -148,7 +148,7 @@ namespace YoungHero.StringManager
                         sb.Append(x.SbList[i]);
                         sb.Append(@""",");
                     }
-                    else if (i == x.SbList.Count - 1)
+                    else if (i == 12)
                     {
                         sb.Append(@"""AfterStoryID"":""");
                         sb.Append(x.SbList[i]);
