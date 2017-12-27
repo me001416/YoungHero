@@ -27,6 +27,7 @@ namespace YoungHero
             SelectModeComboBox.Items.Add("Item");
         }
 
+        #region Button Evnet
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofg = new OpenFileDialog();
@@ -75,6 +76,44 @@ namespace YoungHero
 
             await Task.Run(() => this.FileLoad());
         }
+
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            StringBuilder sb = new StringBuilder();
+
+            sfd.Filter = "Txt File|*.txt";
+
+            if (Directory.Exists(Application.StartupPath + @"\Data"))
+            {
+                sfd.InitialDirectory = Application.StartupPath + @"\Data";
+            }
+            else
+            {
+                sfd.InitialDirectory = Properties.Settings.Default.dataPathName;
+            }
+
+            sfd.ShowDialog();
+
+            if (string.IsNullOrEmpty(sfd.FileName))
+            {
+                return;
+            }
+
+            if (string.IsNullOrEmpty(sStr))
+            {
+                return;
+            }
+
+            StreamWriter sw = new StreamWriter(sfd.FileName, false, System.Text.Encoding.Default);
+
+            await sw.WriteAsync(sStr);
+            sw.Close();
+
+            MessageBox.Show("存檔完成", "存檔");
+            this.Close();
+        }
+        #endregion
 
         private void FileLoad()
         {
@@ -140,43 +179,6 @@ namespace YoungHero
             sStr = ds.FormatFileData(SelectMode);
 
             return;
-        }
-
-        private async void button3_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            StringBuilder sb = new StringBuilder();
-
-            sfd.Filter = "Txt File|*.txt";
-
-            if (Directory.Exists(Application.StartupPath + @"\Data"))
-            {
-                sfd.InitialDirectory = Application.StartupPath + @"\Data";
-            }
-            else
-            {
-                sfd.InitialDirectory = Properties.Settings.Default.dataPathName;
-            }
-
-            sfd.ShowDialog();
-
-            if (string.IsNullOrEmpty(sfd.FileName))
-            {
-                return;
-            }
-
-            if (string.IsNullOrEmpty(sStr))
-            {
-                return;
-            }
-
-            StreamWriter sw = new StreamWriter(sfd.FileName, false, System.Text.Encoding.Default);
-
-            await sw.WriteAsync(sStr);
-            sw.Close();
-
-            MessageBox.Show("存檔完成", "存檔");
-            this.Close();
         }
     }
 }

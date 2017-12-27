@@ -171,6 +171,7 @@ namespace YoungHero
             UpdateNpcListBox();
         }
 
+        #region TextBox Evnet
         private void TextBox_Group1_Leave(object sender, EventArgs e)
         {
             saveJson.m_iMoney = this.MoneyTextBox.Text;
@@ -223,5 +224,6 @@ namespace YoungHero
                 }
             }
         }
+        #endregion
     }
 }
