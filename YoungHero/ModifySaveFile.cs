@@ -9,6 +9,7 @@ namespace YoungHero
     {
         dynamic saveJson;
         NpcJson gNpcJson;
+        NeigongJson gNeigongJson;
         int CurrentNpcID;
 
         #region 建構函數
@@ -28,6 +29,7 @@ namespace YoungHero
         private void Initial()
         {
             gNpcJson = new NpcJson();
+            gNeigongJson = new NeigongJson();
             CurrentNpcID = 0;
 
             this.MoneyTextBox.Text = saveJson.m_iMoney;
@@ -123,6 +125,23 @@ namespace YoungHero
                     DefendDodgeTextBox.Text = npc.iDefendDodge;
 
 
+                    /*
+                    byte NeigongIndex = 0;
+
+                    foreach (dynamic Neigong in npc.NeigongList)
+                    {
+                        switch (NeigongIndex)
+                        {
+                            case 0:
+                                ComboBox1.Items.Add("Neigong");
+                                break;
+                            default:
+                                break;
+                        }
+
+                        NeigongIndex++;
+                    }
+                    */
                     CurrentNpcID = IdResult;
                 }
             }
