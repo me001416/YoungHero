@@ -562,7 +562,7 @@
             // ComboBox1
             // 
             this.ComboBox1.FormattingEnabled = true;
-            this.ComboBox1.Location = new System.Drawing.Point(356, 50);
+            this.ComboBox1.Location = new System.Drawing.Point(382, 52);
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(121, 20);
             this.ComboBox1.TabIndex = 42;
@@ -570,7 +570,7 @@
             // ComboBox2
             // 
             this.ComboBox2.FormattingEnabled = true;
-            this.ComboBox2.Location = new System.Drawing.Point(356, 80);
+            this.ComboBox2.Location = new System.Drawing.Point(382, 80);
             this.ComboBox2.Name = "ComboBox2";
             this.ComboBox2.Size = new System.Drawing.Size(121, 20);
             this.ComboBox2.TabIndex = 43;
@@ -578,7 +578,7 @@
             // ComboBox3
             // 
             this.ComboBox3.FormattingEnabled = true;
-            this.ComboBox3.Location = new System.Drawing.Point(356, 105);
+            this.ComboBox3.Location = new System.Drawing.Point(382, 105);
             this.ComboBox3.Name = "ComboBox3";
             this.ComboBox3.Size = new System.Drawing.Size(121, 20);
             this.ComboBox3.TabIndex = 44;
@@ -586,7 +586,7 @@
             // ComboBox4
             // 
             this.ComboBox4.FormattingEnabled = true;
-            this.ComboBox4.Location = new System.Drawing.Point(356, 133);
+            this.ComboBox4.Location = new System.Drawing.Point(382, 133);
             this.ComboBox4.Name = "ComboBox4";
             this.ComboBox4.Size = new System.Drawing.Size(121, 20);
             this.ComboBox4.TabIndex = 45;
@@ -594,7 +594,7 @@
             // ComboBox5
             // 
             this.ComboBox5.FormattingEnabled = true;
-            this.ComboBox5.Location = new System.Drawing.Point(356, 161);
+            this.ComboBox5.Location = new System.Drawing.Point(382, 161);
             this.ComboBox5.Name = "ComboBox5";
             this.ComboBox5.Size = new System.Drawing.Size(121, 20);
             this.ComboBox5.TabIndex = 46;
@@ -602,7 +602,7 @@
             // ComboBox6
             // 
             this.ComboBox6.FormattingEnabled = true;
-            this.ComboBox6.Location = new System.Drawing.Point(356, 189);
+            this.ComboBox6.Location = new System.Drawing.Point(382, 189);
             this.ComboBox6.Name = "ComboBox6";
             this.ComboBox6.Size = new System.Drawing.Size(121, 20);
             this.ComboBox6.TabIndex = 47;
