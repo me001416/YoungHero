@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -45,12 +40,31 @@ namespace YoungHero
         {
             int index = 0;
 
-            foreach (dynamic Neigong in NJson)
+            foreach (dynamic Neigong in NJson.NeigongList)
             {
                 index++;
             }
 
             Length = index;
+        }
+
+        public string GetNameByIndex(int SrcIndex)
+        {
+            int index = 0;
+            string ResultStr = string.Empty;
+
+            foreach (dynamic Neigong in NJson.NeigongList)
+            {
+                if(index == SrcIndex)
+                {
+                    ResultStr = Neigong.id + "\t" + Neigong.Name;
+                    break;
+                }
+
+                index++;
+            }
+
+            return ResultStr;
         }
     }
 }

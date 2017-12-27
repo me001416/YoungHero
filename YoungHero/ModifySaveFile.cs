@@ -124,7 +124,15 @@ namespace YoungHero
                     DefendCounterTextBox.Text = npc.iDefendCounter;
                     DefendDodgeTextBox.Text = npc.iDefendDodge;
 
-
+                    for(int NIndex = 0; NIndex < gNeigongJson.Length; NIndex++)
+                    {
+                        ComboBox1.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox2.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox3.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox4.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox5.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox6.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                    }
                     /*
                     byte NeigongIndex = 0;
 
