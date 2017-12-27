@@ -117,7 +117,7 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(719, 24);
+            this.backButton.Location = new System.Drawing.Point(789, 24);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 23);
             this.backButton.TabIndex = 5;
@@ -127,7 +127,7 @@
             // 
             // confrimButton
             // 
-            this.confrimButton.Location = new System.Drawing.Point(719, 79);
+            this.confrimButton.Location = new System.Drawing.Point(789, 76);
             this.confrimButton.Name = "confrimButton";
             this.confrimButton.Size = new System.Drawing.Size(75, 23);
             this.confrimButton.TabIndex = 6;
