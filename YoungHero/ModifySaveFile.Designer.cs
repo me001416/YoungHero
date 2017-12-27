@@ -73,6 +73,12 @@
             this.label17 = new System.Windows.Forms.Label();
             this.DefendCriTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.s.SuspendLayout();
             this.SuspendLayout();
@@ -147,6 +153,12 @@
             // 
             // s
             // 
+            this.s.Controls.Add(this.comboBox6);
+            this.s.Controls.Add(this.comboBox5);
+            this.s.Controls.Add(this.comboBox4);
+            this.s.Controls.Add(this.comboBox3);
+            this.s.Controls.Add(this.comboBox2);
+            this.s.Controls.Add(this.comboBox1);
             this.s.Controls.Add(this.DefendDodgeTextBox);
             this.s.Controls.Add(this.label16);
             this.s.Controls.Add(this.DefendCounterTextBox);
@@ -547,6 +559,54 @@
             this.label18.TabIndex = 36;
             this.label18.Text = "抗暴";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(356, 50);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.TabIndex = 42;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(356, 80);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 20);
+            this.comboBox2.TabIndex = 43;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(356, 105);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 20);
+            this.comboBox3.TabIndex = 44;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(356, 133);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 20);
+            this.comboBox4.TabIndex = 45;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(356, 161);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(121, 20);
+            this.comboBox5.TabIndex = 46;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(356, 189);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 20);
+            this.comboBox6.TabIndex = 47;
+            // 
             // ModifySaveFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -615,5 +675,11 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox DefendCriTextBox;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
