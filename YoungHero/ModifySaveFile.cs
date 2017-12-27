@@ -11,6 +11,7 @@ namespace YoungHero
         NpcJson gNpcJson;
         int CurrentNpcID;
 
+        #region 建構函數
         public ModifySaveFile()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace YoungHero
             this.saveJson = saveJson;
             Initial();
         }
+        #endregion
 
         private void Initial()
         {
@@ -34,6 +36,7 @@ namespace YoungHero
             UpdateNpcListBox();
         }
 
+        #region ListBox Function
         private void UpdateNpcListBox()
         {
             NpcListBox.Items.Clear();
@@ -75,52 +78,12 @@ namespace YoungHero
             }
         }
 
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("確定要離開嗎?", "離開", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        private async void confrimButton_Click(object sender, EventArgs e)
-        {
-            saveJson.m_iAttributePoints = this.AttributePointsTextBox.Text;
-
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Save File|*.Save";
-            sfd.InitialDirectory = Properties.Settings.Default.pathName;
-            sfd.ShowDialog();
-
-            if(string.IsNullOrEmpty(sfd.FileName))
-            {
-                return;
-            }
-
-            StreamWriter sw = new StreamWriter(sfd.FileName);
-
-            await sw.WriteAsync(JsonConvert.SerializeObject(saveJson));
-            sw.Close();
-
-            MessageBox.Show("存檔完成", "存檔");
-            this.Close();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateNpcListBox();
-        }
-
         private void NpcListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectNpc = NpcListBox.SelectedItem.ToString();
             int IdResult = gNpcJson.ReturnId(selectNpc);
 
-            if(IdResult == 0)
+            if (IdResult == 0)
             {
                 try
                 {
@@ -163,6 +126,49 @@ namespace YoungHero
                     CurrentNpcID = IdResult;
                 }
             }
+        }
+        #endregion
+
+        #region Button Evnet
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("確定要離開嗎?", "離開", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private async void confrimButton_Click(object sender, EventArgs e)
+        {
+            saveJson.m_iAttributePoints = this.AttributePointsTextBox.Text;
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Save File|*.Save";
+            sfd.InitialDirectory = Properties.Settings.Default.pathName;
+            sfd.ShowDialog();
+
+            if(string.IsNullOrEmpty(sfd.FileName))
+            {
+                return;
+            }
+
+            StreamWriter sw = new StreamWriter(sfd.FileName);
+
+            await sw.WriteAsync(JsonConvert.SerializeObject(saveJson));
+            sw.Close();
+
+            MessageBox.Show("存檔完成", "存檔");
+            this.Close();
+        }
+        #endregion
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateNpcListBox();
         }
 
         private void TextBox_Group1_Leave(object sender, EventArgs e)
