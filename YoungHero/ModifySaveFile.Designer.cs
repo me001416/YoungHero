@@ -142,7 +142,7 @@
             this.tabControl1.Location = new System.Drawing.Point(29, 93);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(675, 469);
+            this.tabControl1.Size = new System.Drawing.Size(754, 469);
             this.tabControl1.TabIndex = 7;
             // 
             // s
@@ -186,7 +186,7 @@
             this.s.Location = new System.Drawing.Point(4, 22);
             this.s.Name = "s";
             this.s.Padding = new System.Windows.Forms.Padding(3);
-            this.s.Size = new System.Drawing.Size(667, 443);
+            this.s.Size = new System.Drawing.Size(746, 443);
             this.s.TabIndex = 0;
             this.s.Text = "NPC";
             this.s.UseVisualStyleBackColor = true;
@@ -455,7 +455,7 @@
             // 
             this.NpcListBox.FormattingEnabled = true;
             this.NpcListBox.ItemHeight = 12;
-            this.NpcListBox.Location = new System.Drawing.Point(518, 6);
+            this.NpcListBox.Location = new System.Drawing.Point(615, 6);
             this.NpcListBox.Name = "NpcListBox";
             this.NpcListBox.Size = new System.Drawing.Size(125, 412);
             this.NpcListBox.TabIndex = 8;
