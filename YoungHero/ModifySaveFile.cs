@@ -80,6 +80,83 @@ namespace YoungHero
             }
         }
 
+        private void NpcListBox_Test(int SrcID)
+        {
+            foreach (dynamic npc in saveJson.m_NpcList)
+            {
+                int TempNpcID = npc.iNpcID.ToObject<Int32>();
+
+                if (SrcID == TempNpcID)
+                {
+                    HpTextBox.Text = npc.iMaxHp;
+                    SpTextBox.Text = npc.iMaxSp;
+
+                    StrTextBox.Text = npc.iStr;
+                    ConTextBox.Text = npc.iCon;
+                    IntTextBox.Text = npc.iInt;
+                    DexTextBox.Text = npc.iDex;
+                    MaxStrTextBox.Text = npc.iMaxStr;
+                    MaxConTextBox.Text = npc.iMaxCon;
+                    MaxIntTextBox.Text = npc.iMaxInt;
+                    MaxDexTextBox.Text = npc.iMaxDex;
+
+                    MoveTextBox.Text = npc.iMoveStep;
+
+                    CriTextBox.Text = npc.iCri;
+                    CounterTextBox.Text = npc.iCounter;
+                    DodgeTextBox.Text = npc.iDodge;
+                    DefendCriTextBox.Text = npc.iDefendCri;
+                    DefendCounterTextBox.Text = npc.iDefendCounter;
+                    DefendDodgeTextBox.Text = npc.iDefendDodge;
+
+                    for (int NIndex = 0; NIndex < gNeigongJson.Length; NIndex++)
+                    {
+                        ComboBox1.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox2.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox3.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox4.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox5.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                        ComboBox6.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
+                    }
+
+                    byte NeigongIndex = 0;
+
+                    foreach (dynamic mNeigong in npc.NeigongList)
+                    {
+                        int TempNeigongIndex = gNeigongJson.GetNameByIndex(mNeigong.iSkillID);
+
+                        switch (NeigongIndex)
+                        {
+                            case 0:
+                                ComboBox1.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 1:
+                                ComboBox2.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 2:
+                                ComboBox3.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 3:
+                                ComboBox4.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 4:
+                                ComboBox5.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 5:
+                                ComboBox6.SelectedIndex = TempNeigongIndex;
+                                break;
+                            default:
+                                break;
+                        }
+
+                        NeigongIndex++;
+                    }
+
+                    CurrentNpcID = SrcID;
+                }
+            }
+        }
+
         private void NpcListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectNpc = NpcListBox.SelectedItem.ToString();
@@ -97,6 +174,13 @@ namespace YoungHero
                 }
             }
 
+            NpcListBox_Test(IdResult);
+
+            if (IdResult == 0)
+            {
+                IdResult = 1;
+            }
+            /*
             foreach (dynamic npc in saveJson.m_NpcList)
             {
                 int TempNpcID = npc.iNpcID.ToObject<Int32>();
@@ -138,7 +222,6 @@ namespace YoungHero
 
                     foreach (dynamic mNeigong in npc.NeigongList)
                     {
-                        //int TempNeigongID = mNeigong.iSkillID.ToObject<Int32>();
                         int TempNeigongIndex = gNeigongJson.GetNameByIndex(mNeigong.iSkillID);
 
                         switch (NeigongIndex)
@@ -170,7 +253,7 @@ namespace YoungHero
 
                     CurrentNpcID = IdResult;
                 }
-            }
+            }*/
         }
         #endregion
 
