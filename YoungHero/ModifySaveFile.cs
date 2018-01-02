@@ -229,18 +229,18 @@ namespace YoungHero
         }
 
         #region TextBox Evnet
-        private void TextBox_Group1_Leave(object sender, EventArgs e)
-        {
-            saveJson.m_iMoney = this.MoneyTextBox.Text;
-            saveJson.m_iAttributePoints = this.AttributePointsTextBox.Text;
-        }
-
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+
+        private void TextBox_Group1_Leave(object sender, EventArgs e)
+        {
+            saveJson.m_iMoney = this.MoneyTextBox.Text;
+            saveJson.m_iAttributePoints = this.AttributePointsTextBox.Text;
         }
 
         private void TextBox_Group2_Leave(object sender, EventArgs e)
