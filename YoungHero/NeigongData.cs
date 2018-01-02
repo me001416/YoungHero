@@ -66,5 +66,24 @@ namespace YoungHero
 
             return ResultStr;
         }
+
+        public int GetIndexByID(string SrcID)
+        {
+            int ResultIndex = 0;
+            int index = 0;
+
+            foreach (dynamic Neigong in NJson.NeigongList)
+            {
+                if (Neigong.id == SrcID)
+                {
+                    ResultIndex = index;
+                    break;
+                }
+
+                index++;
+            }
+
+            return ResultIndex;
+        }
     }
 }
