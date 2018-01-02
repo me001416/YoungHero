@@ -85,18 +85,17 @@ namespace YoungHero
         private void ClearComboBox()
         {
             ComboBox1.Items.Clear();
+            ComboBox1.Text = null;
             ComboBox2.Items.Clear();
+            ComboBox2.Text = null;
             ComboBox3.Items.Clear();
+            ComboBox3.Text = null;
             ComboBox4.Items.Clear();
+            ComboBox4.Text = null;
             ComboBox5.Items.Clear();
+            ComboBox5.Text = null;
             ComboBox6.Items.Clear();
-
-            ComboBox1.SelectedIndex = -1;
-            ComboBox2.SelectedIndex = -1;
-            ComboBox3.SelectedIndex = -1;
-            ComboBox4.SelectedIndex = -1;
-            ComboBox5.SelectedIndex = -1;
-            ComboBox6.SelectedIndex = -1;
+            ComboBox6.Text = null;
         }
 
         private void NpcListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,9 +115,9 @@ namespace YoungHero
                 }
             }
 
-            //ClearComboBox();
-
             gComboBoxFlag = false;
+
+            ClearComboBox();
 
             foreach (dynamic npc in saveJson.m_NpcList)
             {
@@ -146,8 +145,6 @@ namespace YoungHero
                     DefendCriTextBox.Text = npc.iDefendCri;
                     DefendCounterTextBox.Text = npc.iDefendCounter;
                     DefendDodgeTextBox.Text = npc.iDefendDodge;
-
-                    ClearComboBox();
 
                     for (int NIndex = 0; NIndex < gNeigongJson.Length; NIndex++)
                     {
@@ -191,6 +188,37 @@ namespace YoungHero
                         }
 
                         NeigongIndex++;
+                    }
+
+                    switch (NeigongIndex)
+                    {
+                        case 1:
+                            ComboBox2.Items.Clear();
+                            ComboBox3.Items.Clear();
+                            ComboBox4.Items.Clear();
+                            ComboBox5.Items.Clear();
+                            ComboBox6.Items.Clear();
+                            break;
+                        case 2:
+                            ComboBox3.Items.Clear();
+                            ComboBox4.Items.Clear();
+                            ComboBox5.Items.Clear();
+                            ComboBox6.Items.Clear();
+                            break;
+                        case 3:
+                            ComboBox4.Items.Clear();
+                            ComboBox5.Items.Clear();
+                            ComboBox6.Items.Clear();
+                            break;
+                        case 4:
+                            ComboBox5.Items.Clear();
+                            ComboBox6.Items.Clear();
+                            break;
+                        case 5:
+                            ComboBox6.Items.Clear();
+                            break;
+                        default:
+                            break;
                     }
 
                     CurrentNpcID = IdResult;
