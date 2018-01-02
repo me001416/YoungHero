@@ -11,6 +11,7 @@ namespace YoungHero
         NpcJson gNpcJson;
         NeigongJson gNeigongJson;
         int CurrentNpcID;
+        bool gComboBoxFlag;
 
         #region 建構函數
         public ModifySaveFile()
@@ -31,6 +32,7 @@ namespace YoungHero
             gNpcJson = new NpcJson();
             gNeigongJson = new NeigongJson();
             CurrentNpcID = 0;
+            gComboBoxFlag = false;
 
             this.MoneyTextBox.Text = saveJson.m_iMoney;
             this.AttributePointsTextBox.Text = saveJson.m_iAttributePoints;
@@ -88,6 +90,13 @@ namespace YoungHero
             ComboBox4.Items.Clear();
             ComboBox5.Items.Clear();
             ComboBox6.Items.Clear();
+
+            ComboBox1.SelectedIndex = -1;
+            ComboBox2.SelectedIndex = -1;
+            ComboBox3.SelectedIndex = -1;
+            ComboBox4.SelectedIndex = -1;
+            ComboBox5.SelectedIndex = -1;
+            ComboBox6.SelectedIndex = -1;
         }
 
         private void NpcListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,7 +116,9 @@ namespace YoungHero
                 }
             }
 
-            ClearComboBox();
+            //ClearComboBox();
+
+            gComboBoxFlag = false;
 
             foreach (dynamic npc in saveJson.m_NpcList)
             {
@@ -136,7 +147,9 @@ namespace YoungHero
                     DefendCounterTextBox.Text = npc.iDefendCounter;
                     DefendDodgeTextBox.Text = npc.iDefendDodge;
 
-                    for(int NIndex = 0; NIndex < gNeigongJson.Length; NIndex++)
+                    ClearComboBox();
+
+                    for (int NIndex = 0; NIndex < gNeigongJson.Length; NIndex++)
                     {
                         ComboBox1.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
                         ComboBox2.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
@@ -183,6 +196,8 @@ namespace YoungHero
                     CurrentNpcID = IdResult;
                 }
             }
+
+            gComboBoxFlag = true;
         }
         #endregion
 
@@ -283,12 +298,21 @@ namespace YoungHero
         }
         #endregion
 
-        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_TextChanged(object sender, EventArgs e)
         {
+            if(!gComboBoxFlag)
+            {
+                return;
+            }
+
             int a = ComboBox1.SelectedIndex;
             int b = ComboBox2.SelectedIndex;
             int c = ComboBox3.SelectedIndex;
             int d = ComboBox4.SelectedIndex;
+            if(d == -1)
+            {
+                b = b - 1;
+            }
             int E = ComboBox5.SelectedIndex;
             int f = ComboBox6.SelectedIndex;
         }

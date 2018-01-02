@@ -250,7 +250,7 @@
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(180, 20);
             this.ComboBox1.TabIndex = 42;
-            this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
+            this.ComboBox1.TextChanged += new System.EventHandler(this.ComboBox1_TextChanged);
             // 
             // DefendDodgeTextBox
             // 
