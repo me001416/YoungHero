@@ -1,6 +1,9 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.Text;
+using System.Globalization;
+using System;
 
 namespace YoungHero
 {
@@ -84,6 +87,41 @@ namespace YoungHero
             }
 
             return ResultIndex;
+        }
+
+        private string IdFilter(string SrcName)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (var i = 0; i < SrcName.Length; i++)
+            {
+                string TempStr = StringInfo.GetNextTextElement(SrcName, i);
+
+                if (TempStr == "\t")
+                {
+                    break;
+                }
+
+                sb.Append(TempStr);
+            }
+
+            return sb.ToString();
+        }
+
+        public int ReturnId(string SrcName)
+        {
+            int result = 0;
+            string str = IdFilter(SrcName);
+
+            foreach (dynamic Neigong in NJson.NeigongList)
+            {
+                if (Neigong.id == str)
+                {
+                    result = Neigong.id.ToObject<Int32>();
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -257,7 +257,7 @@ namespace YoungHero
 
         private void TextBox_Group2_Leave(object sender, EventArgs e)
         {
-            int PointNpcId = 0;
+            int TargetNpcId = 0;
 
             if(CurrentNpcID == 0)
             {
@@ -266,9 +266,9 @@ namespace YoungHero
 
             foreach (dynamic npc in saveJson.m_NpcList)
             {
-                PointNpcId = npc.iNpcID.ToObject<Int32>();
+                TargetNpcId = npc.iNpcID.ToObject<Int32>();
 
-                if (PointNpcId == CurrentNpcID)
+                if (TargetNpcId == CurrentNpcID)
                 {
                     npc.iMaxHp = HpTextBox.Text;
                     npc.iMaxSp = SpTextBox.Text;
@@ -302,16 +302,124 @@ namespace YoungHero
                 return;
             }
 
-            int a = ComboBox1.SelectedIndex;
-            int b = ComboBox2.SelectedIndex;
-            int c = ComboBox3.SelectedIndex;
-            int d = ComboBox4.SelectedIndex;
-            if(d == -1)
+            if (CurrentNpcID == 0)
             {
-                b = b - 1;
+                return;
             }
-            int E = ComboBox5.SelectedIndex;
-            int f = ComboBox6.SelectedIndex;
+
+            int TargetNpcId = 0;
+
+            int ComboBox1_ID = 0;
+            int ComboBox2_ID = 0;
+            int ComboBox3_ID = 0;
+            int ComboBox4_ID = 0;
+            int ComboBox5_ID = 0;
+            int ComboBox6_ID = 0;
+
+            if(ComboBox1.SelectedIndex != -1)
+            {
+                ComboBox1_ID = gNeigongJson.ReturnId(ComboBox1.Text);
+            }
+
+            if (ComboBox2.SelectedIndex != -1)
+            {
+                ComboBox2_ID = gNeigongJson.ReturnId(ComboBox2.Text);
+            }
+
+            if (ComboBox3.SelectedIndex != -1)
+            {
+                ComboBox3_ID = gNeigongJson.ReturnId(ComboBox3.Text);
+            }
+
+            if (ComboBox4.SelectedIndex != -1)
+            {
+                ComboBox4_ID = gNeigongJson.ReturnId(ComboBox4.Text);
+            }
+
+            if (ComboBox5.SelectedIndex != -1)
+            {
+                ComboBox5_ID = gNeigongJson.ReturnId(ComboBox5.Text);
+            }
+
+            if (ComboBox6.SelectedIndex != -1)
+            {
+                ComboBox6_ID = gNeigongJson.ReturnId(ComboBox6.Text);
+            }
+
+            foreach (dynamic npc in saveJson.m_NpcList)
+            {
+                TargetNpcId = npc.iNpcID.ToObject<Int32>();
+
+                if (TargetNpcId == CurrentNpcID)
+                {
+                    byte NeigongIndex = 0;
+
+                    foreach (dynamic mNeigong in npc.NeigongList)
+                    {
+                        switch (NeigongIndex)
+                        {
+                            case 0:
+                                if(ComboBox1_ID == 0)
+                                {
+                                    MessageBox.Show("ComboBox1_ID was 0", "Error");
+                                    return;
+                                }
+
+                                mNeigong.iSkillID = ComboBox1_ID;
+                                break;
+                            case 1:
+                                if (ComboBox2_ID == 0)
+                                {
+                                    MessageBox.Show("ComboBox2_ID was 0", "Error");
+                                    return;
+                                }
+
+                                mNeigong.iSkillID = ComboBox2_ID;
+                                break;
+                            case 2:
+                                if (ComboBox3_ID == 0)
+                                {
+                                    MessageBox.Show("ComboBox3_ID was 0", "Error");
+                                    return;
+                                }
+
+                                mNeigong.iSkillID = ComboBox3_ID;
+                                break;
+                            case 3:
+                                if (ComboBox4_ID == 0)
+                                {
+                                    MessageBox.Show("ComboBox4_ID was 0", "Error");
+                                    return;
+                                }
+
+                                mNeigong.iSkillID = ComboBox4_ID;
+                                break;
+                            case 4:
+                                if (ComboBox5_ID == 0)
+                                {
+                                    MessageBox.Show("ComboBox5_ID was 0", "Error");
+                                    return;
+                                }
+
+                                mNeigong.iSkillID = ComboBox5_ID;
+                                break;
+                            case 5:
+                                if (ComboBox6_ID == 0)
+                                {
+                                    MessageBox.Show("ComboBox6_ID was 0", "Error");
+                                    return;
+                                }
+
+                                mNeigong.iSkillID = ComboBox6_ID;
+                                break;
+                            default:
+                                break;
+                        }
+
+                        NeigongIndex++;
+                    }
+                }
+            }
         }
     }
 }
