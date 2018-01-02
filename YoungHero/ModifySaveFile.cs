@@ -190,37 +190,6 @@ namespace YoungHero
                         NeigongIndex++;
                     }
 
-                    switch (NeigongIndex)
-                    {
-                        case 1:
-                            ComboBox2.Items.Clear();
-                            ComboBox3.Items.Clear();
-                            ComboBox4.Items.Clear();
-                            ComboBox5.Items.Clear();
-                            ComboBox6.Items.Clear();
-                            break;
-                        case 2:
-                            ComboBox3.Items.Clear();
-                            ComboBox4.Items.Clear();
-                            ComboBox5.Items.Clear();
-                            ComboBox6.Items.Clear();
-                            break;
-                        case 3:
-                            ComboBox4.Items.Clear();
-                            ComboBox5.Items.Clear();
-                            ComboBox6.Items.Clear();
-                            break;
-                        case 4:
-                            ComboBox5.Items.Clear();
-                            ComboBox6.Items.Clear();
-                            break;
-                        case 5:
-                            ComboBox6.Items.Clear();
-                            break;
-                        default:
-                            break;
-                    }
-
                     CurrentNpcID = IdResult;
                 }
             }
