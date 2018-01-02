@@ -133,15 +133,33 @@ namespace YoungHero
                         ComboBox5.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
                         ComboBox6.Items.Add($"{gNeigongJson.GetNameByIndex(NIndex)}");
                     }
-                    /*
+
                     byte NeigongIndex = 0;
 
-                    foreach (dynamic Neigong in npc.NeigongList)
+                    foreach (dynamic mNeigong in npc.NeigongList)
                     {
+                        //int TempNeigongID = mNeigong.iSkillID.ToObject<Int32>();
+                        int TempNeigongIndex = gNeigongJson.GetNameByIndex(mNeigong.iSkillID);
+
                         switch (NeigongIndex)
                         {
                             case 0:
-                                ComboBox1.Items.Add("Neigong");
+                                ComboBox1.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 1:
+                                ComboBox2.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 2:
+                                ComboBox3.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 3:
+                                ComboBox4.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 4:
+                                ComboBox5.SelectedIndex = TempNeigongIndex;
+                                break;
+                            case 5:
+                                ComboBox6.SelectedIndex = TempNeigongIndex;
                                 break;
                             default:
                                 break;
@@ -149,7 +167,7 @@ namespace YoungHero
 
                         NeigongIndex++;
                     }
-                    */
+
                     CurrentNpcID = IdResult;
                 }
             }
