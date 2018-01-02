@@ -36,6 +36,18 @@
             this.confrimButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.s = new System.Windows.Forms.TabPage();
+            this.ComboBox6 = new System.Windows.Forms.ComboBox();
+            this.ComboBox5 = new System.Windows.Forms.ComboBox();
+            this.ComboBox4 = new System.Windows.Forms.ComboBox();
+            this.ComboBox3 = new System.Windows.Forms.ComboBox();
+            this.ComboBox2 = new System.Windows.Forms.ComboBox();
+            this.ComboBox1 = new System.Windows.Forms.ComboBox();
+            this.DefendDodgeTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.DefendCounterTextBox = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.DefendCriTextBox = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.DodgeTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.CounterTextBox = new System.Windows.Forms.TextBox();
@@ -67,18 +79,6 @@
             this.HpTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
-            this.DefendDodgeTextBox = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.DefendCounterTextBox = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.DefendCriTextBox = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.ComboBox1 = new System.Windows.Forms.ComboBox();
-            this.ComboBox2 = new System.Windows.Forms.ComboBox();
-            this.ComboBox3 = new System.Windows.Forms.ComboBox();
-            this.ComboBox4 = new System.Windows.Forms.ComboBox();
-            this.ComboBox5 = new System.Windows.Forms.ComboBox();
-            this.ComboBox6 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.s.SuspendLayout();
             this.SuspendLayout();
@@ -202,6 +202,112 @@
             this.s.TabIndex = 0;
             this.s.Text = "NPC";
             this.s.UseVisualStyleBackColor = true;
+            // 
+            // ComboBox6
+            // 
+            this.ComboBox6.FormattingEnabled = true;
+            this.ComboBox6.Location = new System.Drawing.Point(382, 300);
+            this.ComboBox6.Name = "ComboBox6";
+            this.ComboBox6.Size = new System.Drawing.Size(180, 20);
+            this.ComboBox6.TabIndex = 47;
+            // 
+            // ComboBox5
+            // 
+            this.ComboBox5.FormattingEnabled = true;
+            this.ComboBox5.Location = new System.Drawing.Point(382, 250);
+            this.ComboBox5.Name = "ComboBox5";
+            this.ComboBox5.Size = new System.Drawing.Size(180, 20);
+            this.ComboBox5.TabIndex = 46;
+            // 
+            // ComboBox4
+            // 
+            this.ComboBox4.FormattingEnabled = true;
+            this.ComboBox4.Location = new System.Drawing.Point(382, 200);
+            this.ComboBox4.Name = "ComboBox4";
+            this.ComboBox4.Size = new System.Drawing.Size(180, 20);
+            this.ComboBox4.TabIndex = 45;
+            // 
+            // ComboBox3
+            // 
+            this.ComboBox3.FormattingEnabled = true;
+            this.ComboBox3.Location = new System.Drawing.Point(382, 150);
+            this.ComboBox3.Name = "ComboBox3";
+            this.ComboBox3.Size = new System.Drawing.Size(180, 20);
+            this.ComboBox3.TabIndex = 44;
+            // 
+            // ComboBox2
+            // 
+            this.ComboBox2.FormattingEnabled = true;
+            this.ComboBox2.Location = new System.Drawing.Point(382, 100);
+            this.ComboBox2.Name = "ComboBox2";
+            this.ComboBox2.Size = new System.Drawing.Size(180, 20);
+            this.ComboBox2.TabIndex = 43;
+            // 
+            // ComboBox1
+            // 
+            this.ComboBox1.FormattingEnabled = true;
+            this.ComboBox1.Location = new System.Drawing.Point(382, 50);
+            this.ComboBox1.Name = "ComboBox1";
+            this.ComboBox1.Size = new System.Drawing.Size(180, 20);
+            this.ComboBox1.TabIndex = 42;
+            this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
+            // 
+            // DefendDodgeTextBox
+            // 
+            this.DefendDodgeTextBox.Location = new System.Drawing.Point(250, 271);
+            this.DefendDodgeTextBox.Name = "DefendDodgeTextBox";
+            this.DefendDodgeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DefendDodgeTextBox.TabIndex = 41;
+            this.DefendDodgeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.DefendDodgeTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label16.Location = new System.Drawing.Point(190, 271);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 16);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "閃避";
+            // 
+            // DefendCounterTextBox
+            // 
+            this.DefendCounterTextBox.Location = new System.Drawing.Point(250, 243);
+            this.DefendCounterTextBox.Name = "DefendCounterTextBox";
+            this.DefendCounterTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DefendCounterTextBox.TabIndex = 39;
+            this.DefendCounterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.DefendCounterTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label17.Location = new System.Drawing.Point(190, 243);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 16);
+            this.label17.TabIndex = 38;
+            this.label17.Text = "抗反";
+            // 
+            // DefendCriTextBox
+            // 
+            this.DefendCriTextBox.Location = new System.Drawing.Point(250, 215);
+            this.DefendCriTextBox.Name = "DefendCriTextBox";
+            this.DefendCriTextBox.Size = new System.Drawing.Size(100, 22);
+            this.DefendCriTextBox.TabIndex = 37;
+            this.DefendCriTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.DefendCriTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label18.Location = new System.Drawing.Point(190, 215);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(40, 16);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "抗暴";
             // 
             // DodgeTextBox
             // 
@@ -497,115 +603,10 @@
             this.ItemTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemTabPage.Name = "ItemTabPage";
             this.ItemTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ItemTabPage.Size = new System.Drawing.Size(667, 443);
+            this.ItemTabPage.Size = new System.Drawing.Size(746, 443);
             this.ItemTabPage.TabIndex = 1;
             this.ItemTabPage.Text = "ITEM";
             this.ItemTabPage.UseVisualStyleBackColor = true;
-            // 
-            // DefendDodgeTextBox
-            // 
-            this.DefendDodgeTextBox.Location = new System.Drawing.Point(250, 271);
-            this.DefendDodgeTextBox.Name = "DefendDodgeTextBox";
-            this.DefendDodgeTextBox.Size = new System.Drawing.Size(100, 22);
-            this.DefendDodgeTextBox.TabIndex = 41;
-            this.DefendDodgeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.DefendDodgeTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label16.Location = new System.Drawing.Point(190, 271);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 16);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "閃避";
-            // 
-            // DefendCounterTextBox
-            // 
-            this.DefendCounterTextBox.Location = new System.Drawing.Point(250, 243);
-            this.DefendCounterTextBox.Name = "DefendCounterTextBox";
-            this.DefendCounterTextBox.Size = new System.Drawing.Size(100, 22);
-            this.DefendCounterTextBox.TabIndex = 39;
-            this.DefendCounterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.DefendCounterTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label17.Location = new System.Drawing.Point(190, 243);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 16);
-            this.label17.TabIndex = 38;
-            this.label17.Text = "抗反";
-            // 
-            // DefendCriTextBox
-            // 
-            this.DefendCriTextBox.Location = new System.Drawing.Point(250, 215);
-            this.DefendCriTextBox.Name = "DefendCriTextBox";
-            this.DefendCriTextBox.Size = new System.Drawing.Size(100, 22);
-            this.DefendCriTextBox.TabIndex = 37;
-            this.DefendCriTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.DefendCriTextBox.Leave += new System.EventHandler(this.TextBox_Group2_Leave);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label18.Location = new System.Drawing.Point(190, 215);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(40, 16);
-            this.label18.TabIndex = 36;
-            this.label18.Text = "抗暴";
-            // 
-            // ComboBox1
-            // 
-            this.ComboBox1.FormattingEnabled = true;
-            this.ComboBox1.Location = new System.Drawing.Point(382, 50);
-            this.ComboBox1.Name = "ComboBox1";
-            this.ComboBox1.Size = new System.Drawing.Size(180, 20);
-            this.ComboBox1.TabIndex = 42;
-            // 
-            // ComboBox2
-            // 
-            this.ComboBox2.FormattingEnabled = true;
-            this.ComboBox2.Location = new System.Drawing.Point(382, 100);
-            this.ComboBox2.Name = "ComboBox2";
-            this.ComboBox2.Size = new System.Drawing.Size(180, 20);
-            this.ComboBox2.TabIndex = 43;
-            // 
-            // ComboBox3
-            // 
-            this.ComboBox3.FormattingEnabled = true;
-            this.ComboBox3.Location = new System.Drawing.Point(382, 150);
-            this.ComboBox3.Name = "ComboBox3";
-            this.ComboBox3.Size = new System.Drawing.Size(180, 20);
-            this.ComboBox3.TabIndex = 44;
-            // 
-            // ComboBox4
-            // 
-            this.ComboBox4.FormattingEnabled = true;
-            this.ComboBox4.Location = new System.Drawing.Point(382, 200);
-            this.ComboBox4.Name = "ComboBox4";
-            this.ComboBox4.Size = new System.Drawing.Size(180, 20);
-            this.ComboBox4.TabIndex = 45;
-            // 
-            // ComboBox5
-            // 
-            this.ComboBox5.FormattingEnabled = true;
-            this.ComboBox5.Location = new System.Drawing.Point(382, 250);
-            this.ComboBox5.Name = "ComboBox5";
-            this.ComboBox5.Size = new System.Drawing.Size(180, 20);
-            this.ComboBox5.TabIndex = 46;
-            // 
-            // ComboBox6
-            // 
-            this.ComboBox6.FormattingEnabled = true;
-            this.ComboBox6.Location = new System.Drawing.Point(382, 300);
-            this.ComboBox6.Name = "ComboBox6";
-            this.ComboBox6.Size = new System.Drawing.Size(180, 20);
-            this.ComboBox6.TabIndex = 47;
             // 
             // ModifySaveFile
             // 

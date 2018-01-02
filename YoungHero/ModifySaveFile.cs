@@ -282,5 +282,15 @@ namespace YoungHero
             }
         }
         #endregion
+
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int a = ComboBox1.SelectedIndex;
+            int b = ComboBox2.SelectedIndex;
+            int c = ComboBox3.SelectedIndex;
+            int d = ComboBox4.SelectedIndex;
+            int E = ComboBox5.SelectedIndex;
+            int f = ComboBox6.SelectedIndex;
+        }
     }
 }
