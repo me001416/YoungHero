@@ -361,8 +361,7 @@ namespace YoungHero
                             case 0:
                                 if(ComboBox1_ID == 0)
                                 {
-                                    MessageBox.Show("ComboBox1_ID was 0", "Error");
-                                    return;
+                                    continue;
                                 }
 
                                 mNeigong.iSkillID = ComboBox1_ID;
@@ -370,8 +369,7 @@ namespace YoungHero
                             case 1:
                                 if (ComboBox2_ID == 0)
                                 {
-                                    MessageBox.Show("ComboBox2_ID was 0", "Error");
-                                    return;
+                                    continue;
                                 }
 
                                 mNeigong.iSkillID = ComboBox2_ID;
@@ -379,8 +377,7 @@ namespace YoungHero
                             case 2:
                                 if (ComboBox3_ID == 0)
                                 {
-                                    MessageBox.Show("ComboBox3_ID was 0", "Error");
-                                    return;
+                                    continue;
                                 }
 
                                 mNeigong.iSkillID = ComboBox3_ID;
@@ -388,8 +385,7 @@ namespace YoungHero
                             case 3:
                                 if (ComboBox4_ID == 0)
                                 {
-                                    MessageBox.Show("ComboBox4_ID was 0", "Error");
-                                    return;
+                                    continue;
                                 }
 
                                 mNeigong.iSkillID = ComboBox4_ID;
@@ -397,8 +393,7 @@ namespace YoungHero
                             case 4:
                                 if (ComboBox5_ID == 0)
                                 {
-                                    MessageBox.Show("ComboBox5_ID was 0", "Error");
-                                    return;
+                                    continue;
                                 }
 
                                 mNeigong.iSkillID = ComboBox5_ID;
@@ -406,8 +401,7 @@ namespace YoungHero
                             case 5:
                                 if (ComboBox6_ID == 0)
                                 {
-                                    MessageBox.Show("ComboBox6_ID was 0", "Error");
-                                    return;
+                                    continue;
                                 }
 
                                 mNeigong.iSkillID = ComboBox6_ID;
