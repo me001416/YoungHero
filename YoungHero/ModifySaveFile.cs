@@ -5,6 +5,9 @@ using System.IO;
 
 namespace YoungHero
 {
+    /// <summary>
+    /// 修改視窗
+    /// </summary>
     public partial class ModifySaveFile : Form
     {
         dynamic saveJson;
@@ -13,22 +16,25 @@ namespace YoungHero
         int CurrentNpcID;
         bool gComboBoxFlag;
 
-        #region 建構函數
+        #region 早期初始化
         public ModifySaveFile()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Main Constructor Function
+        /// </summary>
+        /// <param name="saveJson">From Save File.</param>
         public ModifySaveFile(ref dynamic saveJson)
         {            
             InitializeComponent();
             this.saveJson = saveJson;
             Initial();
         }
-        #endregion
 
         /// <summary>
-        /// 
+        /// 初始化
         /// </summary>
         private void Initial()
         {
@@ -42,6 +48,7 @@ namespace YoungHero
 
             UpdateNpcListBox();
         }
+        #endregion
 
         #region ListBox Function
         private void UpdateNpcListBox()
