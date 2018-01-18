@@ -1,9 +1,10 @@
-﻿using System;
-using System.Text;
+﻿#define DEBUG_ON
+using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
+using System.Diagnostics;
 
 namespace YoungHero
 {
@@ -20,6 +21,9 @@ namespace YoungHero
         /// </summary>
         public LoadSaveFile()
         {
+#if DEBUG_ON
+            Trace.WriteLine("LoadSaveFile - Entry");
+#endif
             InitializeComponent();
         }
 
@@ -30,6 +34,9 @@ namespace YoungHero
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+#if DEBUG_ON
+            Trace.WriteLine("LoadSaveFile::button1_Click - Entry");
+#endif
             OpenFileDialog ofg = new OpenFileDialog();
             ofg.Filter = "Save File|*.Save";
             ofg.InitialDirectory = Properties.Settings.Default.pathName;
@@ -49,13 +56,16 @@ namespace YoungHero
         }
 
         /// <summary>
-        /// 
+        /// 開啟修改視窗
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private async void button2_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(this.saveFileName))
+#if DEBUG_ON
+            Trace.WriteLine("LoadSaveFile::button2_Click - Entry");
+#endif
+            if (string.IsNullOrEmpty(this.saveFileName))
             {
                 return;
             }
@@ -68,11 +78,22 @@ namespace YoungHero
             msf.ShowDialog();
         }
 
+        /// <summary>
+        /// 離開
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
+#if DEBUG_ON
+            Trace.WriteLine("LoadSaveFile::button3_Click - Entry");
+#endif
             this.Close();
         }
 
+        /// <summary>
+        /// 透過 StreamReader 讀取指定檔案
+        /// </summary>
         private void SaveLoad()
         {
             StreamReader saveSR = new StreamReader(this.saveFileName, System.Text.Encoding.Default);

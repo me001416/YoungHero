@@ -16,9 +16,6 @@ namespace YoungHero
         public MainForm()
         {
             InitializeComponent();
-#if DEBUG_ON
-            Trace.WriteLine("MainForm - Entry");
-#endif
         }
 
         /// <summary>
@@ -28,6 +25,9 @@ namespace YoungHero
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+#if DEBUG_ON
+            Trace.WriteLine("MainForm::button1_Click - Entry");
+#endif
             LoadSaveFile formLSF = new LoadSaveFile();
             formLSF.Top = Top;
             formLSF.Left = Left + (Width / 3);
@@ -41,6 +41,9 @@ namespace YoungHero
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
+#if DEBUG_ON
+            Trace.WriteLine("MainForm::button2_Click - Entry");
+#endif
             Application.Exit();
         }
 
@@ -51,6 +54,9 @@ namespace YoungHero
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
+#if DEBUG_ON
+            Trace.WriteLine("MainForm::button3_Click - Entry");
+#endif
             DataMaker dmk = new DataMaker();
             dmk.Top = Top;
             dmk.Left = Left;
