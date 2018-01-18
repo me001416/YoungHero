@@ -79,8 +79,10 @@
             this.HpTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.s.SuspendLayout();
+            this.ItemTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // label
@@ -605,6 +607,7 @@
             // 
             // ItemTabPage
             // 
+            this.ItemTabPage.Controls.Add(this.button1);
             this.ItemTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemTabPage.Name = "ItemTabPage";
             this.ItemTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -612,6 +615,15 @@
             this.ItemTabPage.TabIndex = 1;
             this.ItemTabPage.Text = "ITEM";
             this.ItemTabPage.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(452, 86);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // ModifySaveFile
             // 
@@ -630,6 +642,7 @@
             this.tabControl1.ResumeLayout(false);
             this.s.ResumeLayout(false);
             this.s.PerformLayout();
+            this.ItemTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,5 +700,6 @@
         private System.Windows.Forms.ComboBox ComboBox3;
         private System.Windows.Forms.ComboBox ComboBox2;
         private System.Windows.Forms.ComboBox ComboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
