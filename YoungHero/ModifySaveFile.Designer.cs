@@ -210,6 +210,7 @@
             this.ComboBox6.Name = "ComboBox6";
             this.ComboBox6.Size = new System.Drawing.Size(180, 20);
             this.ComboBox6.TabIndex = 47;
+            this.ComboBox6.TextChanged += new System.EventHandler(this.ComboBox1_TextChanged);
             // 
             // ComboBox5
             // 
@@ -218,6 +219,7 @@
             this.ComboBox5.Name = "ComboBox5";
             this.ComboBox5.Size = new System.Drawing.Size(180, 20);
             this.ComboBox5.TabIndex = 46;
+            this.ComboBox5.TextChanged += new System.EventHandler(this.ComboBox1_TextChanged);
             // 
             // ComboBox4
             // 
@@ -226,6 +228,7 @@
             this.ComboBox4.Name = "ComboBox4";
             this.ComboBox4.Size = new System.Drawing.Size(180, 20);
             this.ComboBox4.TabIndex = 45;
+            this.ComboBox4.TextChanged += new System.EventHandler(this.ComboBox1_TextChanged);
             // 
             // ComboBox3
             // 
@@ -234,6 +237,7 @@
             this.ComboBox3.Name = "ComboBox3";
             this.ComboBox3.Size = new System.Drawing.Size(180, 20);
             this.ComboBox3.TabIndex = 44;
+            this.ComboBox3.TextChanged += new System.EventHandler(this.ComboBox1_TextChanged);
             // 
             // ComboBox2
             // 
@@ -242,6 +246,7 @@
             this.ComboBox2.Name = "ComboBox2";
             this.ComboBox2.Size = new System.Drawing.Size(180, 20);
             this.ComboBox2.TabIndex = 43;
+            this.ComboBox2.TextChanged += new System.EventHandler(this.ComboBox1_TextChanged);
             // 
             // ComboBox1
             // 

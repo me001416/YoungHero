@@ -356,9 +356,11 @@ namespace YoungHero
 
                     foreach (dynamic mNeigong in npc.NeigongList)
                     {
+                        NeigongIndex++;
+
                         switch (NeigongIndex)
                         {
-                            case 0:
+                            case 1:
                                 if(ComboBox1_ID == 0)
                                 {
                                     continue;
@@ -366,7 +368,7 @@ namespace YoungHero
 
                                 mNeigong.iSkillID = ComboBox1_ID;
                                 break;
-                            case 1:
+                            case 2:
                                 if (ComboBox2_ID == 0)
                                 {
                                     continue;
@@ -374,7 +376,7 @@ namespace YoungHero
 
                                 mNeigong.iSkillID = ComboBox2_ID;
                                 break;
-                            case 2:
+                            case 3:
                                 if (ComboBox3_ID == 0)
                                 {
                                     continue;
@@ -382,7 +384,7 @@ namespace YoungHero
 
                                 mNeigong.iSkillID = ComboBox3_ID;
                                 break;
-                            case 3:
+                            case 4:
                                 if (ComboBox4_ID == 0)
                                 {
                                     continue;
@@ -390,7 +392,7 @@ namespace YoungHero
 
                                 mNeigong.iSkillID = ComboBox4_ID;
                                 break;
-                            case 4:
+                            case 5:
                                 if (ComboBox5_ID == 0)
                                 {
                                     continue;
@@ -398,7 +400,7 @@ namespace YoungHero
 
                                 mNeigong.iSkillID = ComboBox5_ID;
                                 break;
-                            case 5:
+                            case 6:
                                 if (ComboBox6_ID == 0)
                                 {
                                     continue;
@@ -409,8 +411,6 @@ namespace YoungHero
                             default:
                                 break;
                         }
-
-                        NeigongIndex++;
                     }
                 }
             }
