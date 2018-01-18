@@ -8,5 +8,6 @@ namespace YoungHero
 {
     class Item
     {
+
     }
 }

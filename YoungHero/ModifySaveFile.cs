@@ -27,6 +27,9 @@ namespace YoungHero
         }
         #endregion
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void Initial()
         {
             gNpcJson = new NpcJson();
