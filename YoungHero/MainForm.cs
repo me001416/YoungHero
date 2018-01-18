@@ -1,5 +1,7 @@
-﻿using System;
+﻿#define DEBUG_ON
+using System;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace YoungHero
 {
@@ -14,6 +16,9 @@ namespace YoungHero
         public MainForm()
         {
             InitializeComponent();
+#if DEBUG_ON
+            Trace.WriteLine("MainForm - Entry");
+#endif
         }
 
         /// <summary>

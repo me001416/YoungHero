@@ -7,16 +7,27 @@ using System.IO;
 
 namespace YoungHero
 {
+    /// <summary>
+    /// 檔案選擇視窗
+    /// </summary>
     public partial class LoadSaveFile : Form
     {
         dynamic saveJson;
         String saveFileName;
 
+        /// <summary>
+        /// Main Constructor Function
+        /// </summary>
         public LoadSaveFile()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 檔案瀏覽
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofg = new OpenFileDialog();
@@ -37,14 +48,11 @@ namespace YoungHero
             Properties.Settings.Default.Save();
         }
 
-        private void SaveLoad()
-        {
-            StreamReader saveSR = new StreamReader(this.saveFileName, System.Text.Encoding.Default);
-            string saveStr = saveSR.ReadToEnd();
-            saveJson = JsonConvert.DeserializeObject(saveStr);
-            saveSR.Close();
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void button2_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(this.saveFileName))
@@ -63,6 +71,14 @@ namespace YoungHero
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SaveLoad()
+        {
+            StreamReader saveSR = new StreamReader(this.saveFileName, System.Text.Encoding.Default);
+            string saveStr = saveSR.ReadToEnd();
+            saveJson = JsonConvert.DeserializeObject(saveStr);
+            saveSR.Close();
         }
     }
 }
