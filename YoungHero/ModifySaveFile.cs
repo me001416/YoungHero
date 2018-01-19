@@ -1,7 +1,9 @@
-﻿using System;
+﻿#define DEBUG_ON
+using System;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
+using System.Diagnostics;
 
 namespace YoungHero
 {
@@ -17,8 +19,15 @@ namespace YoungHero
         bool gComboBoxFlag;
 
         #region 早期初始化
+        /// <summary>
+        /// Constructor Function
+        /// </summary>
         public ModifySaveFile()
         {
+#if DEBUG_ON
+            Trace.WriteLine(DateTime.Now.ToString() + " - ModifySaveFile() - Entry");
+            Trace.WriteLine("Non param");
+#endif
             InitializeComponent();
         }
 
@@ -27,7 +36,10 @@ namespace YoungHero
         /// </summary>
         /// <param name="saveJson">From Save File.</param>
         public ModifySaveFile(ref dynamic saveJson)
-        {            
+        {
+#if DEBUG_ON
+            Trace.WriteLine(DateTime.Now.ToString() + " - ModifySaveFile(ref dynamic saveJson) - Entry");
+#endif
             InitializeComponent();
             this.saveJson = saveJson;
             Initial();
@@ -48,9 +60,10 @@ namespace YoungHero
 
             UpdateNpcListBox();
         }
-        #endregion
 
-        #region ListBox Function
+        /// <summary>
+        /// 選出要顯示的 NPC
+        /// </summary>
         private void UpdateNpcListBox()
         {
             NpcListBox.Items.Clear();
@@ -75,9 +88,13 @@ namespace YoungHero
             }
         }
 
+        /// <summary>
+        /// 將 NPC 陳列到 ListBox
+        /// </summary>
+        /// <param name="SrcId"></param>
         private void InitNpcListBox(int SrcId)
         {
-            if(!gNpcJson.CheckJsonDone())
+            if (!gNpcJson.CheckJsonDone())
             {
                 MessageBox.Show("JsonDone was false", "Warning");
             }
@@ -91,7 +108,12 @@ namespace YoungHero
                 NpcListBox.Items.Add($"{SrcId}");
             }
         }
+        #endregion
 
+        #region ListBox Function
+        /// <summary>
+        /// 清空 ComboBox，避免 ComboBox 混亂
+        /// </summary>
         private void ClearComboBox()
         {
             ComboBox1.Items.Clear();
@@ -108,6 +130,11 @@ namespace YoungHero
             ComboBox6.Text = null;
         }
 
+        /// <summary>
+        /// 顯示選擇的 NPC 數據
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NpcListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectNpc = NpcListBox.SelectedItem.ToString();
