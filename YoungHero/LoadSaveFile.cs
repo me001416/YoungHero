@@ -22,7 +22,7 @@ namespace YoungHero
         public LoadSaveFile()
         {
 #if DEBUG_ON
-            Trace.WriteLine("LoadSaveFile - Entry");
+            Trace.WriteLine(DateTime.Now.ToString() + " - LoadSaveFile - Entry");
 #endif
             InitializeComponent();
         }
@@ -42,10 +42,10 @@ namespace YoungHero
             ofg.InitialDirectory = Properties.Settings.Default.pathName;
             ofg.Multiselect = false;
             ofg.ShowDialog();
-            this.saveFileName = ofg.FileName;
-            this.textBox1.Text = ofg.FileName;
+            saveFileName = ofg.FileName;
+            textBox1.Text = ofg.FileName;
 
-            if(string.IsNullOrEmpty(this.saveFileName))
+            if(string.IsNullOrEmpty(saveFileName))
             {
                 return;
             }
@@ -65,16 +65,16 @@ namespace YoungHero
 #if DEBUG_ON
             Trace.WriteLine("LoadSaveFile::button2_Click - Entry");
 #endif
-            if (string.IsNullOrEmpty(this.saveFileName))
+            if (string.IsNullOrEmpty(saveFileName))
             {
                 return;
             }
 
-            await Task.Run(() => this.SaveLoad());
+            await Task.Run(() => SaveLoad());
 
             ModifySaveFile msf = new ModifySaveFile(ref saveJson);
-            msf.Top = this.Top;
-            msf.Left = this.Left;
+            msf.Top = Top;
+            msf.Left = Left;
             msf.ShowDialog();
         }
 
@@ -88,7 +88,7 @@ namespace YoungHero
 #if DEBUG_ON
             Trace.WriteLine("LoadSaveFile::button3_Click - Entry");
 #endif
-            this.Close();
+            Close();
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace YoungHero
         /// </summary>
         private void SaveLoad()
         {
-            StreamReader saveSR = new StreamReader(this.saveFileName, System.Text.Encoding.Default);
+            StreamReader saveSR = new StreamReader(saveFileName, System.Text.Encoding.Default);
             string saveStr = saveSR.ReadToEnd();
             saveJson = JsonConvert.DeserializeObject(saveStr);
             saveSR.Close();

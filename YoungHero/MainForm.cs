@@ -15,6 +15,9 @@ namespace YoungHero
         /// </summary>
         public MainForm()
         {
+#if DEBUG_ON
+            Trace.WriteLine(DateTime.Now.ToString() + " - MainForm - Entry");
+#endif
             InitializeComponent();
         }
 
@@ -26,7 +29,7 @@ namespace YoungHero
         private void button1_Click(object sender, EventArgs e)
         {
 #if DEBUG_ON
-            Trace.WriteLine("MainForm::button1_Click - Entry");
+            Trace.WriteLine(DateTime.Now.ToString() + "- MainForm::button1_Click - Entry");
 #endif
             LoadSaveFile formLSF = new LoadSaveFile();
             formLSF.Top = Top;
