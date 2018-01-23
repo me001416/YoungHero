@@ -4,7 +4,7 @@ using System.Text;
 namespace YoungHero.StringManager
 {
     /// <summary>
-    /// 管理 List StringBuild 的 Class
+    /// 管理 List DataStringBuilder 的 Class
     /// </summary>
     public class DataStringBuilderList
     {
@@ -53,11 +53,20 @@ namespace YoungHero.StringManager
             dsList.Add(new DataStringBuilder(dsList.Count - 1));
         }
 
+        /// <summary>
+        /// 透過特殊的 Index 新增 DataStringBuilder 到 List
+        /// </summary>
+        /// <param name="SrcIndex"></param>
         public void New(int SrcIndex)
         {
             dsList.Add(new DataStringBuilder(SrcIndex));
         }
 
+        /// <summary>
+        /// 格式化輸入資料，可選擇格式化的模式
+        /// </summary>
+        /// <param name="SelectMode"></param>
+        /// <returns></returns>
         public string FormatFileData(int SelectMode = 1)
         {
             string str = string.Empty;
@@ -74,6 +83,10 @@ namespace YoungHero.StringManager
             return str;
         }
 
+        /// <summary>
+        /// 給 NPC 資料使用
+        /// </summary>
+        /// <returns></returns>
         private string NPC()
         {
             StringBuilder sb = new StringBuilder();
@@ -190,6 +203,10 @@ namespace YoungHero.StringManager
             return sb.ToString();
         }
 
+        /// <summary>
+        /// 給 Neigong 資料使用
+        /// </summary>
+        /// <returns></returns>
         private string Neigong()
         {
             StringBuilder sb = new StringBuilder();
@@ -330,20 +347,20 @@ namespace YoungHero.StringManager
         }
     }
 
+    /// <summary>
+    /// 管理 List StringBuilder 的 Class
+    /// </summary>
     public class DataStringBuilder
     {
         public List<StringBuilder> SbList { get; private set; }
-        int Index;
 
         public DataStringBuilder()
         {
-            Index = 0;
             SbList = new List<StringBuilder>();
         }
 
         public DataStringBuilder(int SrcIndex)
         {
-            Index = SrcIndex;
             SbList = new List<StringBuilder>();
         }
 
