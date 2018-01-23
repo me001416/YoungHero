@@ -125,7 +125,7 @@ namespace YoungHero
 
         private void FilterFileData(string SrcStr)
         {
-            DataStringBuilderList ds = new DataStringBuilderList();
+            YoungHeroDSBL YHdsbl = new YoungHeroDSBL();
             StringBuilder sb = new StringBuilder();
             string sep1 = "\n";
             string sep2 = "\t";
@@ -140,7 +140,7 @@ namespace YoungHero
                 {
                     if (!IsFirstLine)
                     {
-                        ds.Add(sb);
+                        YHdsbl.Add(sb);
                         sb = new StringBuilder();
                     }
                     continue;
@@ -150,10 +150,10 @@ namespace YoungHero
                 {
                     IsFirstLine = false;
 
-                    ds.Add(sb);
+                    YHdsbl.Add(sb);
                     sb = new StringBuilder();
 
-                    ds.New();
+                    YHdsbl.New();
 
                     continue;
                 }
@@ -172,11 +172,11 @@ namespace YoungHero
                 {
                     sb = new StringBuilder();
                     sb.Append(str);
-                    ds.Add(sb);
+                    YHdsbl.Add(sb);
                 }
             }
 
-            sStr = ds.FormatFileData(SelectMode);
+            sStr = YHdsbl.FormatFileData(SelectMode);
 
             return;
         }
