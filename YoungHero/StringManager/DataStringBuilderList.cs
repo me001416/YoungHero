@@ -354,16 +354,27 @@ namespace YoungHero.StringManager
     {
         public List<StringBuilder> SbList { get; private set; }
 
+        /// <summary>
+        /// Constructor Function
+        /// </summary>
         public DataStringBuilder()
         {
             SbList = new List<StringBuilder>();
         }
 
+        /// <summary>
+        /// Constructor Function
+        /// </summary>
+        /// <param name="SrcIndex"></param>
         public DataStringBuilder(int SrcIndex)
         {
             SbList = new List<StringBuilder>();
         }
 
+        /// <summary>
+        /// 新增 StringBuilder 到 List 裡面
+        /// </summary>
+        /// <param name="SrcSb"></param>
         public void Add(StringBuilder SrcSb)
         {
             SbList.Add(SrcSb);
