@@ -8,7 +8,7 @@
         /// 
         /// App Version
         /// 
-        public static readonly string Version = "1.0.101";
+        public static readonly string Version = "1.0.115";
 
         /// 
         /// Buttons

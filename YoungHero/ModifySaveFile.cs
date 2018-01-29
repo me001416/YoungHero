@@ -55,8 +55,8 @@ namespace YoungHero
             CurrentNpcID = 0;
             gComboBoxFlag = false;
 
-            this.MoneyTextBox.Text = saveJson.m_iMoney;
-            this.AttributePointsTextBox.Text = saveJson.m_iAttributePoints;
+            MoneyTextBox.Text = saveJson.m_iMoney;
+            AttributePointsTextBox.Text = saveJson.m_iAttributePoints;
 
             UpdateNpcListBox();
         }
@@ -112,6 +112,30 @@ namespace YoungHero
 
         #region ListBox Function
         /// <summary>
+        /// 回傳指定 NPC 的 ID
+        /// </summary>
+        /// <returns></returns>
+        private int GetNpcIdFromListBox()
+        {
+            string selectNpc = NpcListBox.SelectedItem.ToString();
+            int IdResult = gNpcJson.ReturnId(selectNpc);
+
+            if (IdResult == 0)
+            {
+                try
+                {
+                    IdResult = int.Parse(selectNpc);
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
+
+            return IdResult;
+        }
+
+        /// <summary>
         /// 清空 ComboBox，避免 ComboBox 混亂
         /// </summary>
         private void ClearComboBox()
@@ -130,6 +154,30 @@ namespace YoungHero
             ComboBox6.Text = null;
         }
 
+        private void FillOutTextBox(ref dynamic SrcNpc)
+        {
+            HpTextBox.Text = SrcNpc.iMaxHp;
+            SpTextBox.Text = SrcNpc.iMaxSp;
+
+            StrTextBox.Text = SrcNpc.iStr;
+            ConTextBox.Text = SrcNpc.iCon;
+            IntTextBox.Text = SrcNpc.iInt;
+            DexTextBox.Text = SrcNpc.iDex;
+            MaxStrTextBox.Text = SrcNpc.iMaxStr;
+            MaxConTextBox.Text = SrcNpc.iMaxCon;
+            MaxIntTextBox.Text = SrcNpc.iMaxInt;
+            MaxDexTextBox.Text = SrcNpc.iMaxDex;
+
+            MoveTextBox.Text = SrcNpc.iMoveStep;
+
+            CriTextBox.Text = SrcNpc.iCri;
+            CounterTextBox.Text = SrcNpc.iCounter;
+            DodgeTextBox.Text = SrcNpc.iDodge;
+            DefendCriTextBox.Text = SrcNpc.iDefendCri;
+            DefendCounterTextBox.Text = SrcNpc.iDefendCounter;
+            DefendDodgeTextBox.Text = SrcNpc.iDefendDodge;
+        }
+
         /// <summary>
         /// 顯示選擇的 NPC 數據
         /// </summary>
@@ -137,20 +185,7 @@ namespace YoungHero
         /// <param name="e"></param>
         private void NpcListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectNpc = NpcListBox.SelectedItem.ToString();
-            int IdResult = gNpcJson.ReturnId(selectNpc);
-
-            if (IdResult == 0)
-            {
-                try
-                {
-                    IdResult = Int32.Parse(selectNpc);
-                }
-                catch (FormatException ex)
-                {
-                    MessageBox.Show(ex.Message, "Error");
-                }
-            }
+            int IdResult = GetNpcIdFromListBox();
 
             gComboBoxFlag = false;
 
@@ -162,26 +197,7 @@ namespace YoungHero
 
                 if (IdResult == TempNpcID)
                 {
-                    HpTextBox.Text = npc.iMaxHp;
-                    SpTextBox.Text = npc.iMaxSp;
-
-                    StrTextBox.Text = npc.iStr;
-                    ConTextBox.Text = npc.iCon;
-                    IntTextBox.Text = npc.iInt;
-                    DexTextBox.Text = npc.iDex;
-                    MaxStrTextBox.Text = npc.iMaxStr;
-                    MaxConTextBox.Text = npc.iMaxCon;
-                    MaxIntTextBox.Text = npc.iMaxInt;
-                    MaxDexTextBox.Text = npc.iMaxDex;
-
-                    MoveTextBox.Text = npc.iMoveStep;
-
-                    CriTextBox.Text = npc.iCri;
-                    CounterTextBox.Text = npc.iCounter;
-                    DodgeTextBox.Text = npc.iDodge;
-                    DefendCriTextBox.Text = npc.iDefendCri;
-                    DefendCounterTextBox.Text = npc.iDefendCounter;
-                    DefendDodgeTextBox.Text = npc.iDefendDodge;
+                    FillOutTextBox(npc);
 
                     for (int NIndex = 0; NIndex < gNeigongJson.Length; NIndex++)
                     {
