@@ -8,18 +8,27 @@ using YoungHero.StringManager;
 
 namespace YoungHero
 {
+    /// <summary>
+    /// 製作程式使用的資料
+    /// </summary>
     public partial class DataMaker : Form
     {
         string FileName;
         string sStr;
         byte SelectMode;
 
+        /// <summary>
+        /// Constructor Function
+        /// </summary>
         public DataMaker()
         {
             InitializeComponent();
             Initial();
         }
 
+        /// <summary>
+        /// 初始化 ComboBox
+        /// </summary>
         private void Initial()
         {
             SelectModeComboBox.Items.Add("Neigong");
@@ -28,16 +37,21 @@ namespace YoungHero
         }
 
         #region Button Evnet
+        /// <summary>
+        /// 開啟並選擇檔案
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofg = new OpenFileDialog();
             ofg.InitialDirectory = Properties.Settings.Default.dataPathName;
             ofg.Multiselect = false;
             ofg.ShowDialog();
-            this.FileName = ofg.FileName;
-            this.textBox1.Text = ofg.FileName;
+            FileName = ofg.FileName;
+            textBox1.Text = ofg.FileName;
 
-            if (string.IsNullOrEmpty(this.FileName))
+            if (string.IsNullOrEmpty(FileName))
             {
                 return;
             }
@@ -47,6 +61,11 @@ namespace YoungHero
             Properties.Settings.Default.Save();
         }
 
+        /// <summary>
+        /// 確認輸入檔案以及選擇模式
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void button2_Click(object sender, EventArgs e)
         {
             string SelectModeStr;
@@ -77,6 +96,11 @@ namespace YoungHero
             await Task.Run(() => this.FileLoad());
         }
 
+        /// <summary>
+        /// 存檔
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void button3_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();

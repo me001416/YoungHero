@@ -5,6 +5,9 @@ namespace YoungHero.StringManager
 {
     class YoungHeroDSBL : DataStringBuilderList
     {
+        /// <summary>
+        /// Constructor Function
+        /// </summary>
         public YoungHeroDSBL()
         {
             dsList = new List<DataStringBuilder>();
