@@ -70,7 +70,7 @@ namespace YoungHero
         {
             string SelectModeStr;
 
-            if (string.IsNullOrEmpty(this.FileName))
+            if (string.IsNullOrEmpty(FileName))
             {
                 return;
             }
@@ -93,7 +93,7 @@ namespace YoungHero
                     return;
             }
 
-            await Task.Run(() => this.FileLoad());
+            await Task.Run(() => FileLoad());
         }
 
         /// <summary>
@@ -135,18 +135,25 @@ namespace YoungHero
             sw.Close();
 
             MessageBox.Show("存檔完成", "存檔");
-            this.Close();
+            Close();
         }
         #endregion
 
+        /// <summary>
+        /// 用 StreamReader 來進行檔案讀取
+        /// </summary>
         private void FileLoad()
         {
-            StreamReader SR = new StreamReader(this.FileName, System.Text.Encoding.Default);
+            StreamReader SR = new StreamReader(FileName, System.Text.Encoding.Default);
             string FileStr = SR.ReadToEnd();
             FilterFileData(FileStr);
             SR.Close();
         }
 
+        /// <summary>
+        /// 排列資料並開始轉換 Json 格式
+        /// </summary>
+        /// <param name="SrcStr"></param>
         private void FilterFileData(string SrcStr)
         {
             YoungHeroDSBL YHdsbl = new YoungHeroDSBL();
