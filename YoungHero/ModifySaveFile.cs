@@ -156,26 +156,28 @@ namespace YoungHero
 
         private void FillOutTextBox(ref dynamic SrcNpc)
         {
-            HpTextBox.Text = SrcNpc.iMaxHp;
-            SpTextBox.Text = SrcNpc.iMaxSp;
+            dynamic Npc = SrcNpc;
 
-            StrTextBox.Text = SrcNpc.iStr;
-            ConTextBox.Text = SrcNpc.iCon;
-            IntTextBox.Text = SrcNpc.iInt;
-            DexTextBox.Text = SrcNpc.iDex;
-            MaxStrTextBox.Text = SrcNpc.iMaxStr;
-            MaxConTextBox.Text = SrcNpc.iMaxCon;
-            MaxIntTextBox.Text = SrcNpc.iMaxInt;
-            MaxDexTextBox.Text = SrcNpc.iMaxDex;
+            HpTextBox.Text = Npc.iMaxHp;
+            SpTextBox.Text = Npc.iMaxSp;
 
-            MoveTextBox.Text = SrcNpc.iMoveStep;
+            StrTextBox.Text = Npc.iStr;
+            ConTextBox.Text = Npc.iCon;
+            IntTextBox.Text = Npc.iInt;
+            DexTextBox.Text = Npc.iDex;
+            MaxStrTextBox.Text = Npc.iMaxStr;
+            MaxConTextBox.Text = Npc.iMaxCon;
+            MaxIntTextBox.Text = Npc.iMaxInt;
+            MaxDexTextBox.Text = Npc.iMaxDex;
 
-            CriTextBox.Text = SrcNpc.iCri;
-            CounterTextBox.Text = SrcNpc.iCounter;
-            DodgeTextBox.Text = SrcNpc.iDodge;
-            DefendCriTextBox.Text = SrcNpc.iDefendCri;
-            DefendCounterTextBox.Text = SrcNpc.iDefendCounter;
-            DefendDodgeTextBox.Text = SrcNpc.iDefendDodge;
+            MoveTextBox.Text = Npc.iMoveStep;
+
+            CriTextBox.Text = Npc.iCri;
+            CounterTextBox.Text = Npc.iCounter;
+            DodgeTextBox.Text = Npc.iDodge;
+            DefendCriTextBox.Text = Npc.iDefendCri;
+            DefendCounterTextBox.Text = Npc.iDefendCounter;
+            DefendDodgeTextBox.Text = Npc.iDefendDodge;
         }
 
         /// <summary>
@@ -197,7 +199,8 @@ namespace YoungHero
 
                 if (IdResult == TempNpcID)
                 {
-                    FillOutTextBox(npc);
+                    dynamic PassNpc = npc;
+                    FillOutTextBox(ref PassNpc);
 
                     for (int NIndex = 0; NIndex < gNeigongJson.Length; NIndex++)
                     {
