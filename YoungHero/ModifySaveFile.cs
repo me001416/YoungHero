@@ -154,6 +154,10 @@ namespace YoungHero
             ComboBox6.Text = null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="SrcNpc"></param>
         private void FillOutTextBox(ref dynamic SrcNpc)
         {
             HpTextBox.Text = SrcNpc.iMaxHp;
